@@ -1,0 +1,389 @@
+.homeContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+
+/* wallpaper section */
+
+.wallpaperSection {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-image: url('/assets/bg_1920x1080.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+
+.title {
+    line-height: 1.15;
+    font-size: 4rem;
+}
+
+.subTitle {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-bottom: 16rem;
+}
+
+.title,
+.subTitle {
+    text-align: center;
+    margin: 0;
+}
+
+@media (min-width:768px) {
+    .subTitle {
+        padding-bottom: 0rem;
+    }
+}
+
+
+/* form section */
+
+.formSection {
+    padding: 1rem;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.formSection p {
+    padding: 0 1rem;
+    margin: 0 0 .5rem;
+    background-color: #111;
+    color: #eaeaea;
+    text-align: right;
+}
+
+@media (min-width:768px) {
+    .formSection {
+        padding: 1rem 0;
+    }
+}
+
+
+/* profile section */
+
+.profileSection {
+    background-color: #eaeaea;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.profileSection {
+    background-color: #eaeaea;
+}
+
+.profileContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: auto;
+    padding: 1rem;
+    max-width: 1000px;
+}
+
+.profileTextContainer {
+    width: 100%;
+    margin: 0;
+    text-align: right;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+}
+
+.profileTextContainer p {
+    margin: 0;
+}
+
+.profileTextContainer h2 {
+    margin: 0 0 .5rem;
+}
+
+.profileImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.profileImage {
+    position: relative;
+    width: 100%;
+    height: 100vw;
+    max-width: 260px;
+    max-height: 390px;
+}
+
+.conclusion {
+    padding: 1rem 0;
+}
+
+.profileLinkContainer {
+    flex: 1;
+}
+
+.profileSectionBtn {
+    padding: .5rem 2rem;
+    margin: auto;
+    cursor: pointer;
+    font-size: large;
+    background-color: #7DBBE6;
+    color: #eaeaea;
+    border: none;
+}
+
+.profileSectionBtn:hover {
+    transform: scale(.95, .95);
+    background-color: rgb(56, 162, 238);
+}
+
+@media (min-width:1025px) {
+    .profileContainer {
+        padding: 1rem 0;
+    }
+}
+
+@media (min-width:768px) {
+    .profileContainer {
+        flex-direction: row;
+    }
+    .profileImageContainer {
+        padding-right: 2rem;
+    }
+    .profileImage {
+        width: 260px;
+        height: 390px;
+    }
+}
+
+
+/* contact section */
+
+.contactSection {
+    background-color: #333;
+    color: #eaeaea;
+}
+
+.contactSection p {
+    margin: 0 0 .5rem;
+}
+
+.contactSection h2 {
+    margin: 0 0 .5rem;
+}
+
+.contactContainer {
+    max-width: 1000px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1rem;
+}
+
+.contactGrid {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.contactGridItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: .5rem;
+}
+
+.contactGridSvg {
+    margin: 1rem;
+}
+
+.contactLinkContainer {
+    margin: auto;
+}
+
+.contactSectionBtn {
+    padding: .5rem 2rem;
+    margin: .5rem auto;
+    cursor: pointer;
+    font-size: large;
+    background-color: #7DBBE6;
+    color: #eaeaea;
+    border: none;
+    width: 100%;
+    transform: scale(1);
+}
+
+.contactSectionBtn:hover {
+    background-color: rgb(56, 162, 238);
+    animation-name: contactBtn;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@media (min-width:1025px) {
+    .contactContainer {
+        padding: 1rem 0;
+    }
+    .contactGrid {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+    .contactGridItem {
+        width: 25%;
+        padding: 0 1rem;
+    }
+}
+
+@keyframes contactBtn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* showcases section */
+
+.showcasesSection {
+    background-color: #eaeaea;
+    padding: 1rem;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.showcasesContainer {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 250px;
+}
+
+.showcasesContainer h2 {
+    margin: 0 0 .5rem;
+}
+
+@media (min-width:550px) {
+    .showcasesContainer {
+        max-width: 500px;
+    }
+}
+
+@media (min-width:800px) {
+    .showcasesContainer {
+        max-width: 750px;
+    }
+}
+
+@media (min-width:1050px) {
+    .showcasesContainer {
+        max-width: 1000px;
+    }
+}
+
+@media (min-width:1025px) {
+    .showcasesSection {
+        padding: 1rem 0;
+    }
+}
+
+
+/* toolbox */
+
+.toolboxSection {
+    color: #eaeaea;
+    background-color: #333;
+}
+
+.toolboxSection h2 {
+    margin: 0 0 .5rem;
+}
+
+.toolboxContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    text-align: right;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.toolboxGrid {
+    display: flex;
+    flex-direction: column;
+}
+
+.toolboxGridItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.toolboxGridSubItem {
+    display: flex;
+}
+
+.toolboxGridSubItemP {
+    display: none;
+    margin: 0 .5rem;
+    text-align: left;
+}
+
+.hr {
+    width: 100%;
+}
+
+@media (min-width:768px) {
+    .toolboxGridSubItemP {
+        display: inline-flex;
+        align-items: flex-end;
+    }
+}
+
+@media (min-width:1025px) {
+    .toolboxContainer {
+        padding: 1rem 0;
+    }
+    .toolboxGrid {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .toolboxGridItem {
+        flex-direction: column;
+        padding: 0 1rem;
+        justify-content: flex-start;
+    }
+    .toolboxGridSubItem {
+        margin: 0 0 .5rem 0;
+    }
+    .hr {
+        width: initial;
+        margin: 0 .25rem;
+    }
+}

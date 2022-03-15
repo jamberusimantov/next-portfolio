@@ -1,0 +1,264 @@
+/* header */
+
+.header {
+    background-color: #111;
+    padding: .5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #eaeaea;
+    z-index: 10;
+}
+
+.header_top {
+    display: flex;
+    align-items: center;
+}
+
+.Menu_false {
+    opacity: 0;
+    height: 0;
+}
+
+.Menu_true {
+    opacity: 1;
+    height: auto;
+}
+
+.socialBtns {
+    display: flex;
+    justify-content: center;
+}
+
+.menuBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger {
+    flex: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.burger {
+    width: 2rem;
+    height: .25rem;
+    margin: .15rem;
+    background-color: #eaeaea;
+}
+
+.nav_desktop {
+    display: flex;
+    justify-content: space-around;
+    max-width: 400px;
+    margin: auto;
+}
+
+.nav_mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: .5rem;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.navItem {
+    cursor: pointer;
+    padding: .5rem;
+}
+
+.headerBtn {
+    cursor: pointer;
+    color: #eaeaea;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .25rem;
+}
+
+.nav_desktop {
+    display: none;
+}
+
+.hamburger_logo_container {
+    flex: 1;
+    display: flex;
+}
+
+.phoneBtn {
+    display: none;
+}
+
+.header_githubBtn {
+    display: none;
+}
+
+.header_linkedinBtn {
+    display: none;
+}
+
+.header_whatsappBtn {
+    display: none;
+}
+
+.links {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+@media (min-width: 1025px) {
+    .header {
+        padding: .5rem 2rem;
+    }
+    .nav_desktop {
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 768px) {
+    .main_nav {
+        flex: 1;
+    }
+    .nav_desktop {
+        display: flex;
+    }
+    .hamburger_logo_container {
+        flex: 0;
+    }
+    .menuBtn {
+        display: none;
+    }
+    .phoneBtn_mobile {
+        display: none;
+    }
+    .phoneBtn {
+        display: flex;
+        color: #eaeaea;
+        align-items: flex-start;
+    }
+    .links {
+        flex-direction: column;
+    }
+    .header_bottom {
+        display: none;
+    }
+}
+
+@media (min-width: 500px) {
+    .hamburger_logo_container {
+        flex-direction: row-reverse;
+    }
+    .logo {
+        flex: 0;
+    }
+    .menuBtn {
+        flex: 1;
+    }
+    .header_githubBtn {
+        display: flex;
+    }
+    .header_linkedinBtn {
+        display: flex;
+    }
+    .header_whatsappBtn {
+        display: flex;
+    }
+}
+
+
+/* footer */
+
+.footer {
+    background-color: #111;
+    padding: .5rem 2.5rem;
+    width: 100%;
+    min-height: 50px;
+    color: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.footerTop {
+    display: flex;
+    align-items: center;
+}
+
+.footerBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+}
+
+.goTOtopBtn {
+    cursor: pointer;
+    position: fixed;
+    bottom: .5rem;
+    left: .5rem;
+    border-radius: 5px;
+    padding: .25rem;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerBtn {
+    cursor: pointer;
+    color: #eaeaea;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .25rem;
+}
+
+.footer_phoneBtn {
+    margin: .5rem 0;
+}
+
+@media (min-width: 500px) {
+    .footerBottom {
+        display: none;
+    }
+}
