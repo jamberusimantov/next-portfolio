@@ -9,9 +9,9 @@ const dbConnection = async () => {
         try {
             const db = await mongoose.connect(serverRuntimeConfig.db);
             connection.isConnected = db.connections[0].readyState
-            connection.isConnected ?
-                console.log("\x1b[32mmongoDB connected") :
-                console.log("\x1b[31mmongoDB connection error");
+            connection.isConnected
+                ? console.log("\x1b[32mmongoDB connected")
+                : console.log("\x1b[31mmongoDB connection error");
         } catch (e) { console.error(e) }
     }
 }

@@ -9,13 +9,14 @@ const mockFormData = {
     name: '',
     email: '',
     phone: '',
+    message: '',
 }
 
 // 0=>initial 
 // 1=>error 
 // 2=>success
 
-const Form = () => {
+const Form = (props: { className?: string, textarea?: boolean }) => {
     const [formData, setFormData] = useState<messageFormData>(mockFormData);
     const [apiResponse, setApiResponse] = useState(0)
 
@@ -31,56 +32,63 @@ const Form = () => {
     }
 
     return (
-        <div className={styles.formContainer}>
-            <form onSubmit={submit} className={styles.form}>
-                <div className={styles.input_container}>
-                    <input
-                        placeholder='שם'
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className={styles.input}
-                        required
-                        value={formData?.name}
-                        type='text'
-                    />
-                </div>
-                <div className={styles.input_container}>
-                    <input
-                        placeholder='דוא"ל'
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className={styles.input}
-                        required
-                        value={formData?.email}
-                        type='email'
-                    />
-                </div>
-                <div className={styles.input_container}>
-                    <input
-                        placeholder='טלפון'
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className={styles.input}
-                        required
-                        value={formData?.phone}
-                        type='tel'
-                        pattern="[0-9]{3}-[0-9]{7}"
-                    />
-                </div>
-                <div className={styles.submitBtn_container}>
-                    <CustomBtn
-                        type='submit'
-                        className={styles.submitBtn}
-                        child={{
-                            name: apiResponse === 2
-                                ? 'success'
-                                : apiResponse === 1
-                                    ? 'failure'
-                                    : undefined,
-                            text: 'שליחה',
-                            size: 25
-                        }}
-                    />
-                </div>
-            </form>
-        </div>
+        <form onSubmit={submit} className={props.className || styles.form}>
+            <div className={styles.input_container}>
+                <input
+                    placeholder='שם'  
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className={styles.input}
+                    required
+                    value={formData?.name}
+                    type='text'
+                />
+            </div>
+            <div className={styles.input_container}>
+                <input
+                    placeholder='דוא"ל'
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className={styles.input}
+                    required
+                    value={formData?.email}
+                    type='email'
+                />
+            </div>
+            <div className={styles.input_container}>
+                <input
+                    placeholder='טלפון'
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className={styles.input}
+                    required
+                    value={formData?.phone}
+                    type='tel'
+                    pattern="[0-9]{3}-[0-9]{7}"
+                />
+            </div>
+            {props.textarea && <div className={styles.input_container}>
+                <textarea
+                    placeholder=' הודעה - לא חובה'
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className={styles.textarea}
+                    value={formData?.message}
+                />
+            </div>
+            }
+            <div className={styles.submitBtn_container}>
+                <CustomBtn
+                    type='submit'
+                    className={styles.submitBtn}
+                    child={{
+                        name: apiResponse === 2
+                            ? 'success'
+                            : apiResponse === 1
+                                ? 'failure'
+                                : undefined,
+                        text: 'שליחה',
+                        size: 25
+                    }}
+                />
+            </div>
+        </form>
     )
 }
 export default Form;

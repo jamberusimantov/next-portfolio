@@ -6,7 +6,7 @@ import { CustomLink } from '../../dir/elements'
 const ErrorServer = () => {
 
     return (
-        <div className={`${styles.container} ${styles.errorContainer}`}>
+        <div className={styles.errorContainer}>
 
             <div className={styles.errorTitleContainer}>
                 <h1 className={styles.title}>

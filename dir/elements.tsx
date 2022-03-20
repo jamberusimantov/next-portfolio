@@ -33,6 +33,7 @@ const CustomLink = (props: {
     child: {
         text?: string,
         name?: string,
+        element?: JSX.Element,
         className?: string,
         size?: number
         samePage?: boolean
@@ -46,7 +47,7 @@ const CustomLink = (props: {
         children={<>
             {props.child.text && <span
                 key={0}
-                className='svg_text'
+                className={'svg_text'}
                 children={props.child.text}
             />}
             {props.child.name && <Svg
@@ -55,6 +56,7 @@ const CustomLink = (props: {
                 size={props.child.size || 35}
                 className={props.child.className || 'svg_round'}
             />}
+            {props.child.element}
         </>}
     />)
 }

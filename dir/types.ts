@@ -7,57 +7,48 @@ type AppPropsWithLayout = AppProps & {
         getLayout: (page: ReactElement) => ReactNode
     }
 }
-type stringKeysObject = { [key: string]: any }
+
+type stringKeysObject = {
+    [key: string]: any
+}
+
 type response = {
     success: boolean,
     data: any,
-    error?: string
+    error?: string,
+    message?: string,
 }
+
 enum btnTypes {
     "button" = "button",
     "submit" = "submit",
     "reset" = "reset",
 }
+
 type messageFormData = stringKeysObject & {
     name: string,
     email: string,
     phone: string,
+    message?: string,
 }
 type message = messageFormData & { _id: string }
 
-
-
-
-
-
-type formConfig = {
-    schema: string,
-    admin?: boolean,
-}
-type website = {
+// 
+type websiteFormData = stringKeysObject & {
     name: string,
     description: string,
     url: string,
     image: string
-    _id: string
 }
-type resume = {
+type website = websiteFormData & { _id: string }
+
+type resumeFormData = stringKeysObject & {
     name: string,
-    description: string,
-    file: string
-    _id: string
+    file: object,
 }
 
-type formData = stringKeysObject & {
-    name?: string,
-    description?: string,
-    url?: string,
-    image?: string,
-    file?: string,
-    subject?: string,
-    message?: string,
-    _id?: string
-}
+type resume = resumeFormData & { _id: string }
+// 
 
 export type {
     AppPropsWithLayout,
@@ -66,11 +57,9 @@ export type {
     btnTypes,
     messageFormData,
     message,
-
-
-
-    formConfig,
+    // 
+    websiteFormData,
     website,
+    resumeFormData,
     resume,
-    formData,
 }

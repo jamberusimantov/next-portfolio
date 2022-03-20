@@ -1,37 +1,85 @@
-import React, { useState } from 'react'
-import { CustomLink, Svg } from '../../dir/elements'
+import React, { useEffect, useState } from 'react'
+import { CustomLink } from '../../dir/elements'
 import Link from 'next/link'
 import styles from './Layout.module.css'
+import Router from 'next/router'
 
-const NavLinks = () => <>
-    <Link
-        href='/contact'
-        children={
-            <span className={styles.navItem}>צור קשר</span>
-        }
-    />
-    <Link
-        href='/showcases'
-        children={
-            <span className={styles.navItem}>עבודות</span>
-        }
-    />
-    <Link
-        href='/profile'
-        children={
-            <span className={styles.navItem}>פרופיל</span>
-        }
-    />
-    <Link
-        href='/'
-        children={
-            <span className={styles.navItem}>דף הבית</span>
-        }
-    />
-</>
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [currentRoute, setCurrentRoute] = useState('/');
+
+    useEffect(() => {
+        Router.events.on('routeChangeComplete', () => {
+                setCurrentRoute(Router.pathname);
+                handleMenuOpen();
+        })
+        return (() => {
+            Router.events.on('routeChangeComplete', () => { })
+        })
+    }, [])
+
+    const handleMenuOpen = () => {
+        const burger1 = document.getElementById('burger1')
+        const burger2 = document.getElementById('burger2')
+        const burger3 = document.getElementById('burger3')
+        if (burger1 && burger2 && burger3) {
+            if (!isMenuOpen) {
+                burger1.style.transform = 'rotate(-45deg) translate(0,5px)'
+                burger2.style.display = 'none'
+                burger3.style.transform = 'rotate(45deg) translate(0,-5px)'
+                setIsMenuOpen(true);
+                return;
+            }
+            burger1.style.transform = ''
+            burger2.style.display = 'block'
+            burger3.style.transform = ''
+            setIsMenuOpen(false);
+        }
+    }
+
+    const NavLinks = () => {
+        return (
+            <>
+                <Link
+                    href='/contact'
+                    children={
+                        <span className={currentRoute === '/contact'
+                            ? styles.current
+                            : styles.navItem
+                        }>צור קשר</span>
+                    }
+                />
+                <Link
+                    href='/showcases'
+                    children={
+                        <span className={currentRoute === '/showcases'
+                            ? styles.current
+                            : styles.navItem
+                        }>עבודות</span>
+                    }
+                />
+                <Link
+                    href='/profile'
+                    children={
+                        <span className={currentRoute === '/profile'
+                            ? styles.current
+                            : styles.navItem
+                        }>פרופיל</span>
+                    }
+                />
+                <Link
+                    href='/'
+                    children={
+                        <span className={currentRoute === '/'
+                            ? styles.current
+                            : styles.navItem
+                        }>דף הבית</span>
+                    }
+                />
+            </>
+        )
+    }
 
     return (
         <header className={styles.header}>
@@ -41,25 +89,27 @@ const Header = () => {
                     <div className={styles.menuBtn}>
                         <div
                             className={styles.hamburger}
-                            onClick={() => { setIsMenuOpen(!isMenuOpen) }}
+                            onClick={handleMenuOpen}
                         >
-                            <div className={`${styles.burger} ${styles.burger1}`}></div>
-                            <div className={`${styles.burger} ${styles.burger2}`}></div>
-                            <div className={`${styles.burger} ${styles.burger3}`}></div>
+                            <div className={styles.burger} id='burger1'></div>
+                            <div className={styles.burger} id='burger2'></div>
+                            <div className={styles.burger} id='burger3'></div>
                         </div>
                     </div>
                     <div className={styles.logoContainer}>
-                        WEB
-                        <CustomLink
-                            url="/"
-                            className={styles.logo}
-                            child={{
-                                name: 'web',
-                                className: 'styles.svg_round',
-                                size: 50,
-                                samePage: true,
-                            }} />
-                        DEV
+                        <div className={styles.logo}>
+                            WEB
+                            <CustomLink
+                                url="/"
+                                className={styles.homeBtn}
+                                child={{
+                                    name: 'web',
+                                    className: 'styles.svg_round',
+                                    size: 50,
+                                    samePage: true,
+                                }} />
+                            DEV
+                        </div>
                     </div>
                 </div>
 
@@ -113,11 +163,12 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className={`${styles.header_bottom} ${styles['Menu_' + isMenuOpen]}`}>
+            {isMenuOpen && <div className={styles.header_bottom}>
                 <nav className={styles.nav_mobile}>
                     <NavLinks />
                 </nav>
-            </div>
+            </div>}
+
         </header >
     )
 }

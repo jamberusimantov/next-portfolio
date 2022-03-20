@@ -18,6 +18,66 @@ a {
     background-color: #333;
 }
 
+.pageContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    background-color: silver;
+    color: #333;
+    font-size: large;
+    position: relative;
+    padding-top: calc(50px + 1rem);
+}
+
+.pageTitle {
+    background-image: url('/assets/34040.jpg');
+    color: #eaeaea;
+}
+
+.pageTitle h2 {
+    color: #eaeaea;
+    padding: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    text-align: right;
+}
+
+.pageBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageBody p {
+    text-align: right;
+    font-size: large;
+}
+
+.formSection {
+    padding: 1rem 0;
+    width: 100%;
+    background-image: url('/assets/34040.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.formSection p {
+    margin: 0 0 .5rem;
+    padding: 0 1rem;
+    background-color: #111;
+    color: #eaeaea;
+    font-weight: 600;
+    text-align: right;
+}
+
 .svg_text {
     padding-right: .5rem;
     font-size: medium;
@@ -42,5 +102,6 @@ a {
     align-items: center;
     background-color: transparent;
     outline: none;
+    border-radius: 50%;
     border: none;
 }

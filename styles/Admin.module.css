@@ -1,10 +1,14 @@
-.form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.forms {
+    flex: 1;
     width: 100%;
-    max-width: 1000px;
+    background-color: #333;
+    display: flex;
+}
+
+.resumes,
+.websites,
+.messages {
+    max-width: 300px;
 }
 
 .input_container {
@@ -22,8 +26,6 @@
     text-align: right;
     width: 100%;
     max-width: 500px;
-    background-color: silver;
-    color: #333;
 }
 
 .input {
@@ -75,12 +77,6 @@
     max-width: 500px;
     height: 2rem;
     border: none;
-}
-
-@media (min-width:768px) {
-    .form {
-        flex-direction: row-reverse;
-    }
 }
 
 @keyframes submitBtn {

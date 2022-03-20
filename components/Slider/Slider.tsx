@@ -2,49 +2,44 @@ import { useEffect } from 'react';
 import styles from './Slider.module.css';
 import { CustomBtn } from '../../dir/elements';
 
+
 const Slider = () => {
 
-  const slider = document.getElementById('slider')
   let sliderInterval: NodeJS.Timer;
   let margin = 0;
-
-  const moveSlider = () => {
+  const moveSlider = (isNext?: boolean) => {
+    const slider = document.getElementById('slider')
     const sliderMoveInterval = setInterval(() => {
-      margin -= 25;
-      if (margin <= -1500) { margin = 0; }
+      margin = isNext
+        ? margin - 25
+        : margin + 25;
+      margin = margin <= -1500
+        ? 0
+        : margin > 0
+          ? -1500
+          : margin;
       if (slider) { slider.style.marginLeft = `${margin}px`; }
-      if (margin % 250 === 0) { clearInterval(sliderMoveInterval) }
+      margin % 250 === 0 && clearInterval(sliderMoveInterval);
     }, 10);
   }
   const interval = (isStart?: boolean) => {
     if (isStart) {
-      sliderInterval = setInterval(() => moveSlider(), 6000)
+      sliderInterval = setInterval(() => moveSlider(true), 6000)
       return
     }
     clearInterval(sliderInterval)
   }
-  const setMargin = (isNext?: boolean) => {
-    if (isNext) {
-      margin -= 250;
-      if (margin <= -1500) { margin = 0; }
-      if (slider) { slider.style.marginLeft = `${margin}px`; }
-      return
-    }
-    margin += 250;
-    if (margin >= 0) { margin = -1500; }
-    if (slider) { slider.style.marginLeft = `${margin}px`; }
-  }
 
   useEffect(() => {
-    interval(true)
-    return (interval)
+    interval(true);
+    return (interval);
   }, [])
 
   return (
-    <div 
-    className={styles.sliderContainer}
-    onMouseEnter={() => interval()}
-    onMouseLeave={() => interval(true)}
+    <div
+      className={styles.sliderContainer}
+      onMouseEnter={() => interval()}
+      onMouseLeave={() => interval(true)}
     >
       <CustomBtn
         className={styles.slideNextBtn}
@@ -53,7 +48,7 @@ const Slider = () => {
           className: styles.NextBtn,
           size: 20,
         }}
-        click={() => setMargin(true)}
+        click={() => moveSlider(true)}
       />
       <CustomBtn
         className={styles.slidePreviousBtn}
@@ -62,7 +57,7 @@ const Slider = () => {
           className: styles.PreviousBtn,
           size: 20,
         }}
-        click={() => setMargin()}
+        click={() => moveSlider()}
       />
       <div className={styles.slider} id='slider'>
         <div className={`${styles.card} ${styles.card1}`}></div>

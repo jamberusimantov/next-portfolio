@@ -9,7 +9,7 @@ const ErrorClient = () => {
     const router = useRouter();
 
     return (
-        <div className={`${styles.container} ${styles.errorContainer}`}>
+        <div className={styles.errorContainer}>
             <h1 className={styles.title}>
                 Oops... <span>Bad request!</span>
             </h1>

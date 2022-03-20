@@ -4,6 +4,7 @@ import { Layout, Form, Slider } from '../components';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Svg } from '../dir/elements';
+import { buffer } from 'stream/consumers';
 
 
 const ToolboxGridSubItem = (props: { name: string, svg: string }) => {
@@ -37,10 +38,12 @@ const Home = () => {
     <div className={styles.homeContainer}>
 
       <div className={styles.wallpaperSection}>
-        <h1 className={styles.title}>Siman tov Jamberu</h1>
-        <h2 className={styles.subTitle}>Full Stack web developer</h2>
-        <div className={styles.formSection}>
-          <p>רוצים לשמוע עוד או לעבוד יחד? מלאו פרטים עכשיו ואחזור אליכם בהקדם</p>
+        <div className={styles.titleContainer}>
+          <h1 className={styles.title}>Siman tov Jamberu</h1>
+          <h2 className={styles.subTitle}>Full Stack Developer</h2>
+        </div>
+        <div className='formSection'>
+          <p>.רוצים לשמוע עוד? מלאו פרטים עכשיו ואחזור אליכם בהקדם</p>
           <Form />
         </div>
       </div>
@@ -54,11 +57,14 @@ const Home = () => {
           </div>
           <div className={styles.profileTextContainer}>
             <h2> Full Stack web developer - סימן טוב ג'מברו </h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus autem nulla eum.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus autem nulla eum.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus autem nulla eum.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus autem nulla eum.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus autem nulla eum.</p>
+            <p>.בתור מפתח אני תמיד  מוצא את עצמי מרחיב את הידע</p>
+            <p>: לפני פחות משנה סיימתי לימודים תיאורטיים ומעשיים בתכנות הכוללים בין השאר</p>
+            <p>. HTML, CSS, JS, TS, React, Redux, Express.JS, Node.JS, MongoDB </p>
+            <p> :לאחר הלימודים המשכתי בלימוד עצמאי הכולל בין השאר</p>
+            <p> .Ansible, Jenkins, Docker, Linux, SQL</p>
+            <p>.אני קורא הרבה ומתייעץ הרבה עם מומחים כך שאני בטוח שאין אתגר שאין ביכולתי להתגבר עליו</p>
+            <p> .אני מתכנת נלהב במהלך היום ומתרגל יוגה אף יותר נלהב בערב</p>
+            <p> .אני מחפש משרה בתור ג'וניור פול-סטאק אבל פתוח גם למשרות של ג'וניור פרונטאנד או ג'וניור בקאנד</p>
             <p className={styles.conclusion}>!סימן טוב ג'מברו - האיש הנכון בשבילך</p>
             <div className={styles.profileLinkContainer}>
               <Link
@@ -71,11 +77,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div> 
+      </div>
 
       <div className={styles.contactSection}>
         <div className={styles.contactContainer}>
-          <h2> :האני מאמין שלי</h2>
+          <h2> :המטרות שלי</h2>
           <div className={styles.contactGrid}>
             <ContactGridItem
               svg='cv'
