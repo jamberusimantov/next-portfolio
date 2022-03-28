@@ -6,8 +6,6 @@
     justify-content: center;
     align-items: center;
     flex: 1;
-    background-color: #333;
-    background-image: url('/assets/bg_1920x1080.jpg');
     background-size: cover;
     background-position: left;
     background-attachment: fixed;
@@ -54,9 +52,8 @@
     padding: 0 .5rem;
     line-height: 1.5;
     font-size: 1.5rem;
-    color: #eaeaea;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 1px solid #eaeaea;
+    color: #333;
+    border: 1px solid #333;
     border-radius: 10px;
 }
 
@@ -66,6 +63,5 @@
     cursor: pointer;
     color: #0070f3;
     border-color: #0070f3;
-    background-color: rgba(234, 234, 234, 0.5);
-    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+    transition: color 0.15s ease, border-color 0.15s ease;
 }

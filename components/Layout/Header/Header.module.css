@@ -1,0 +1,57 @@
+/* header */
+
+.headerTop {
+    padding-bottom: 1rem;
+}
+
+.headerTopContainer {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    position: relative;
+    background-color: var(--blue);
+    padding: .5rem .05rem;
+    width: min-content;
+    margin: auto;
+    height: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.logoContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width: 2rem;
+    max-height: 2rem;
+}
+
+.name {
+    position: absolute;
+    left: 4rem;
+    bottom: 2.5rem;
+    width: max-content;
+    line-height: 1rem;
+    font-weight: 600;
+    display: none;
+    color: var(--black);
+}
+
+@media(min-width:768px) {
+    .name {
+        display: inline;
+    }
+    .logo {
+        padding: 1.5rem .1rem .5rem;
+        width: min-content;
+        margin: auto;
+        height: 6rem;
+    }
+    .logoContainer {
+        max-width: 3rem;
+        max-height: 3rem;
+    }
+}

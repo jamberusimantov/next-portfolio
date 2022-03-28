@@ -1,0 +1,36 @@
+/* message */
+
+.container {
+    max-width: 1200px;
+    text-align: end;
+    margin: auto;
+    padding: 0 .25rem;
+}
+
+.message {
+    text-align: right;
+    max-width: 800px;
+    margin: 3rem auto 4rem;
+    direction: rtl;
+}
+
+.changeToSeen {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.changeToSeen p {
+    padding: .5rem 0;
+    font-size: large;
+    margin: 0;
+    word-break: break-all;
+}
+
+#status {
+    display: none;
+}
+
+#status.active {
+    display: block;
+}

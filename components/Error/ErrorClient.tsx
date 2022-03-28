@@ -1,8 +1,7 @@
 import React from 'react'
 import styles from './Error.module.css'
 import { useRouter } from 'next/router'
-import { CustomBtn } from '../../dir/elements'
-
+import Link from 'next/link'
 
 const ErrorClient = () => {
 
@@ -18,14 +17,17 @@ const ErrorClient = () => {
                     https://portfoio-simantov.herokuapp.com{router.asPath}
                 </code>
             </p>
-            <CustomBtn
-                click={() => { router.replace('/') }}
-                className='btn'
-                child={{
-                    name: 'home',
-                    size: 35
-                }}
+
+            <Link
+                href='/'
+                children={<p className={styles.link}>דף הבית</p>}
             />
+
+            <Link
+                href='/sitemap'
+                children={<p className={styles.link}>מפת האתר</p>}
+            />
+
         </div>
     )
 }

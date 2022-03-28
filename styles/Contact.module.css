@@ -1,64 +1,52 @@
-.contactGridContainer {
-    width: 100%;
-    background-image: url('/assets/34056.jpg');
-    flex: 1;
+/* contact */
+
+.container {
+    max-width: 1200px;
+    text-align: end;
+    margin: auto;
+    padding: 0 .25rem;
+}
+
+.contact {
+    text-align: right;
+    max-width: 800px;
+    margin: 3rem auto 4rem;
+    direction: rtl;
+}
+
+.contact h1 {
+    font-size: larger;
+    color: var(--blue);
+}
+
+.contact h2 {
+    font-size: larger;
+    color: var(--black);
+}
+
+.linkItem {
+    cursor: pointer;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    color: var(--blue);
 }
 
-.contactGrid {
-    display: flex;
-    flex-direction: column-reverse;
-    margin: 0 auto;
-    padding: 1rem;
-    max-width: 1000px;
-    width: 100%;
-    background-color: #eaeaea;
-    background-color: #333;
-    background-image: url('/assets/34040.jpg');
+.linkBullet {
+    padding-left: .5rem;
 }
 
-.contactGridImageContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 0;
+.linkText {
+    text-align: end;
 }
 
-.contactGridImage {
-    position: relative;
-    width: 100%;
-    height: 100vw;
-    max-width: 260px;
-    max-height: 390px;
+.linkItem:hover .linkText {
+    text-decoration: underline;
 }
 
-.contactGridFormContainer {
-    width: 100%;
-    display: flex;
-    align-items: stretch;
-    padding: .5rem;
-}
-
-.form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-@media (min-width:500px) {
-    .contactGridImage {
-        width: 260px;
-        height: 390px;
-    }
-}
-
-@media (min-width:900px) {
-    .contactGrid {
-        flex-direction: row;
-    }
-    .contactGridImageContainer {
-        padding: 0 2rem 0 0;
+@media(min-width:768px) {
+    .links {
+        display: flex;
+        justify-content: space-between;
     }
 }

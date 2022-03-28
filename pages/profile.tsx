@@ -1,57 +1,53 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { ReactElement } from 'react';
 import styles from '../styles/Profile.module.css'
-import { Layout, Form } from '../components';
-import Image from 'next/image';
+import { Layout, PageHeadWithImage } from '../components';
 
 
 const Profile = () => {
-    const [src, setSrc] = useState(1)
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setSrc(src === 3 ? 1 : src + 1)
-        }, 6000)
-        return (() => clearInterval(interval))
-    })
 
     return (
-        <div className='pageContainer'>
-            <div className='pageTitle'>
-                <h2> Full Stack web developer - סימן טוב ג'מברו </h2>
-            </div>
-            <div className='pageBody'>
-                <div className={styles.profilePTop}>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                </div>
-                <div className={styles.profileGrid}>
-                    <div className={styles.profileGridImageContainer}>
-                        <div className={styles.profileGridImage}>
-                            <Image src={`/assets/profile/profile${src}.jpg`} layout='fill' />
-                        </div>
+        <div className="page">
+            <div className="pageContainer">
+                <PageHeadWithImage
+                    pageName={{ name: 'פרופיל', link: 'profile' }}
+                    imageClassName={styles.bgImage}
+                    image={true}
+                />
+                <div className={styles.container}>
+                    <div className={styles.about}>
+                        <h1>ג'מברו סימן-טוב</h1>
+                        <p>
+                            בתור מפתח אני תמיד  מוצא את עצמי מרחיב את הידע ואני פשוט אוהב את זה. יש בי סקרנות טבעית ורעב ללמוד ולהתפתח ברמה המקצועית וברמה האישית. לאחרונה סיימתי לימודים תיאורטיים ומעשיים בפיתוח ותכנות הכוללים בין השאר:
+                            <strong> HTML</strong>,
+                            <strong> CSS</strong>,
+                            <strong> JavaScript</strong>,
+                            <strong> TypeScript</strong>,
+                            <strong> MongoDB</strong>,
+                            <strong> ExpressJS</strong>,
+                            <strong> ReactJS</strong>,
+                            <strong> NodeJS</strong>,
+                            <strong> Redux</strong>.
+                            יש לי תפיסה קונספטואלית ברמת המאקרו ובמקביל אני יודע לתת תשומת לב לחלקים הקטנים המרכיבים את השלם. לאחר הלימודים עבדתי באינטגרציה באחד מבתי התוכנה הגדולים:
+                            <a href='https://www.cognyte.com/'
+                                target='_blank'
+                                className={styles.link}>
+                                Cognyte
+                            </a>
+                            . דבר אשר הצריך ממני לרכוש ידע וכלים נוספים בצורה עצמאית הכוללים בין השאר:
+                            <strong> Ansible</strong>,
+                            <strong> Jenkins</strong>,
+                            <strong> Docker</strong>,
+                            <strong> Linux</strong>,
+                            <strong> SQL</strong>.
+                            בין תחומי האחריות שלי היו איתור וחקירת באגים, מתן מענה טכני לצוותי פיתוח ובקרת איכות, אינטגרציה של שרתים ושירותים וכן מתן תמיכה ללקוחות החברה. אני קורא הרבה ומרבה להתייעץ עם מומחים כך שאני בטוח שאין אתגר שאין ביכולתי להתגבר עליו. אני מתכנת נלהב במהלך היום ומתרגל יוגה אף יותר נלהב בערב. כבר אמרתי שאני ורסטילי וגמיש?
+                            <span>&#128516; </span>
+                            מאוד מעוניין להתפתח ולגדול בענף הפיתוח ופתוח ל
+                            <strong> BackEnd</strong>/
+                            <strong> FrontEnd</strong>/
+                            <strong> FullStack</strong>.
+                        </p>
                     </div>
-                    <div className={styles.profileGridTextContainer}>
-                        <p>.בתור מפתח אני תמיד  מוצא את עצמי מרחיב את הידע</p>
-                        <p>: לפני פחות משנה סיימתי לימודים תיאורטיים ומעשיים בתכנות הכוללים בין השאר</p>
-                        <p>. HTML, CSS, JS, TS, React, Redux, Express.JS, Node.JS, MongoDB </p>
-                        <p> :לאחר הלימודים המשכתי בלימוד עצמאי הכולל בין השאר</p>
-                        <p> .Ansible, Jenkins, Docker, Linux, SQL</p>
-                        <p>.אני קורא הרבה ומתייעץ הרבה עם מומחים כך שאני בטוח שאין אתגר שאין ביכולתי להתגבר עליו</p>
-                        <p> .אני מתכנת נלהב במהלך היום ומתרגל יוגה אף יותר נלהב בערב</p>
-                        <p> .אני מחפש משרה בתור ג'וניור פול-סטאק אבל פתוח גם למשרות של ג'וניור פרונטאנד או ג'וניור בקאנד</p>
-                    </div>
                 </div>
-                <p className={styles.conclusion}>!סימן טוב ג'מברו - האיש הנכון בשבילך</p>
-
-
-                <div className='formSection'>
-                    <p>.רוצים לשמוע עוד? מלאו פרטים עכשיו ואחזור אליכם בהקדם</p>
-                    <Form />
-                </div>
-
             </div>
         </div>
     )

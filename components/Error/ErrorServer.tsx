@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './Error.module.css'
-import { CustomLink } from '../../dir/elements'
-
+import Link from 'next/link'
 
 const ErrorServer = () => {
 
@@ -18,34 +17,14 @@ const ErrorServer = () => {
                 Sorry for any inconvenience this may cause, here are some other Amazing recommendations
             </h3>
 
-            <CustomLink
-                url="https://memo-simantov.herokuapp.com/"
-                className={styles.link}
-                child={{
-                    name: 'pencil',
-                    text: 'Memo',
-                    size: 35
-                }}
+            <Link
+                href='/'
+                children={<p className={styles.link}>דף הבית</p>}
             />
 
-            <CustomLink
-                url='https://weather-simantov.herokuapp.com/'
-                className={styles.link}
-                child={{
-                    name: 'weather',
-                    text: 'Weather',
-                    size: 35
-                }}
-            />
-
-            <CustomLink
-                url='https://jamberusimantov.github.io/snake/'
-                className={styles.link}
-                child={{
-                    name: 'game',
-                    text: 'Snake',
-                    size: 35
-                }}
+            <Link
+                href='/sitemap'
+                children={<p className={styles.link}>מפת האתר</p>}
             />
 
         </div>

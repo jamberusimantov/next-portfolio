@@ -1,5 +1,13 @@
+import { ReactElement, ReactNode } from 'react'
+import type { AppProps } from 'next/app'
+import type { NextPage } from 'next'
 import '../styles/globals.css'
-import { AppPropsWithLayout } from '../dir/types'
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPage & {
+      getLayout: (page: ReactElement) => ReactNode
+  }
+}
 
 console.log("\x1b[32mWelcome to Portfolio!")
 console.log("\x1b[34mKeep your face to the sun and")

@@ -1,10 +1,9 @@
 import Layout from "./Layout";
-import Slider from "./Slider";
-import Form from "./Form";
-
+import PageHeadWithImage from "./PageHeadWithImage";
+import EmailForm from "./EmailForm/EmailForm";
 
 export {
     Layout,
-    Slider,
-    Form,
+    PageHeadWithImage,
+    EmailForm,
 }

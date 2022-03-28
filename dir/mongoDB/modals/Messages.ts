@@ -4,6 +4,7 @@ const Message = new mongoose.Schema({
     name: String,
     email: String,
     phone: String,
+    subject: String,
     message: String,
     new: { type: Boolean, default: true },
 }, { timestamps: true });

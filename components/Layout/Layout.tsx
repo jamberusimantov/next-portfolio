@@ -1,14 +1,15 @@
-import Head from 'next/head'
 import React, { ReactElement } from 'react'
+import styles from './Layout.module.css'
+import Head from 'next/head'
 import Footer from './Footer'
 import Header from './Header'
 
 const Layout = (props: { children: ReactElement }) => {
 
     return (
-        <div className='container'>
+        <div className={styles.layout}>
             <Head>
-                <title>Portfolio</title>
+                <title>Siman Tov Jamberu Portfolio</title>
                 <meta name="application-name" content='Portfolio' />
                 <meta name="description" content='just another Portfolio' />
                 <meta name="author" content="siman tov jamberu" />
