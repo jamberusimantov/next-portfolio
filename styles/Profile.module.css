@@ -7,29 +7,29 @@
 
 .container {
     max-width: 1200px;
-    text-align: end;
+    display: flex;
+    justify-content: flex-end;
     margin: auto;
     padding: 0 .25rem;
 }
 
 .about {
-    direction: rtl;
-    text-align: right;
     max-width: 800px;
-    margin: 3rem 0 4rem auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-bottom: 4rem
 }
 
 .about h1 {
     color: var(--blue);
     font-size: larger;
+    text-align: start;
 }
 
 .about p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height: 2rem;
     color: var(--black);
-}
-
-.link {
-    color: var(--blue);
+    text-align: start;
 }

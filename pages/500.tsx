@@ -1,16 +1,20 @@
-import React from 'react'
-import dynamic from 'next/dynamic'
+import React from 'react';
+import dynamic from 'next/dynamic';
+import Page from '../components/Page';
+import { iPage } from 'components/Page';
 
 
-const DynamicComponentWithNoSSR = dynamic(
-    () => import('../components/Error/ErrorServer'),
-    { ssr: false }
-)
-
-const PageNotFound = () => {
-
+const ServerError: iPage = () => {
+    const DynamicComponentWithNoSSR = dynamic(() => import('../components/Error'), { ssr: false });
     return (
-        <DynamicComponentWithNoSSR />
-    )
+        <Page
+            pageName={'badRequest'}
+            imageClassName=' '
+            children={<DynamicComponentWithNoSSR pageName='badRequest' />}
+        />
+    );
 }
-export default PageNotFound;
+
+ServerError.getLayout = Page.getLayout;
+
+export default ServerError; 

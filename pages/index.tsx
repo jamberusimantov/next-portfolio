@@ -1,25 +1,13 @@
-import React, { ReactElement } from 'react';
-import { Layout, PageHeadWithImage } from '../components';
+import React from 'react';
+import Page from '../components/Page';
+import { iPage } from 'components/Page';
 
 
-const Index = () => {
-    const links = [
-        { name: 'name1', link: 'url1' },
-        { name: 'name2', link: 'url2' },
-        { name: 'name3', link: 'url3' },
-        { name: 'name4', link: 'ur4' },
-    ]
-    return (
-        <div className="page">
-            <div>
-                <PageHeadWithImage 
-                // customLinks={links} 
-                image={true} />
-            </div>
+const Home: iPage = () => <Page
+    imageClassName={" "}
+    homepage
+/>
 
+Home.getLayout = Page.getLayout;
 
-        </div>
-    )
-}
-Index.getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
-export default Index
+export default Home;

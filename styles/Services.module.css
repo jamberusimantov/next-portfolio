@@ -1,0 +1,59 @@
+.container {
+    max-width: 1200px;
+    text-align: end;
+    margin: auto;
+    padding: 0 .25rem;
+}
+
+.archive,
+.contact,
+.help {
+    max-width: 800px;
+    margin: 3rem auto 4rem;
+    text-align: start;
+}
+
+.archive h1,
+.help h1,
+.contact h1 {
+    font-size: larger;
+    color: var(--blue);
+}
+
+.archive h2,
+.help h2,
+.contact h2 {
+    font-size: larger;
+    color: var(--black);
+}
+
+.links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.links li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: .5rem;
+}
+
+.help p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 2rem;
+    color: var(--black);
+}
+
+.linkBullet {
+    padding: 0 .5rem;
+    color: var(--blue);
+}
+
+@media(min-width:768px) {
+    .links {
+        display: flex;
+        justify-content: space-between;
+    }
+}

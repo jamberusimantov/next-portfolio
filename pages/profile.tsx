@@ -1,56 +1,61 @@
-import React, { ReactElement } from 'react';
+import React, { useContext } from 'react';
 import styles from '../styles/Profile.module.css'
-import { Layout, PageHeadWithImage } from '../components';
+import CustomLink from '../components/CustomLink';
+import Page from '../components/Page';
+import { iPage } from 'components/Page';
+import dictionary from '../dir/dictionary'
+// import { getAppStateHtml } from '../store/hooks'
+import { HTMLContext } from '../pages/_app'
 
 
-const Profile = () => {
+const Profile: iPage = () => <Page
+    pageName="profile"
+    imageClassName={styles.bgImage}
+    children={<PageContent />}
+/>
 
+const PageContent = () => {
+    const { html } = useContext(HTMLContext);
+    // const html = getAppStateHtml();
     return (
-        <div className="page">
-            <div className="pageContainer">
-                <PageHeadWithImage
-                    pageName={{ name: 'פרופיל', link: 'profile' }}
-                    imageClassName={styles.bgImage}
-                    image={true}
-                />
-                <div className={styles.container}>
-                    <div className={styles.about}>
-                        <h1>ג'מברו סימן-טוב</h1>
-                        <p>
-                            בתור מפתח אני תמיד  מוצא את עצמי מרחיב את הידע ואני פשוט אוהב את זה. יש בי סקרנות טבעית ורעב ללמוד ולהתפתח ברמה המקצועית וברמה האישית. לאחרונה סיימתי לימודים תיאורטיים ומעשיים בפיתוח ותכנות הכוללים בין השאר:
-                            <strong> HTML</strong>,
-                            <strong> CSS</strong>,
-                            <strong> JavaScript</strong>,
-                            <strong> TypeScript</strong>,
-                            <strong> MongoDB</strong>,
-                            <strong> ExpressJS</strong>,
-                            <strong> ReactJS</strong>,
-                            <strong> NodeJS</strong>,
-                            <strong> Redux</strong>.
-                            יש לי תפיסה קונספטואלית ברמת המאקרו ובמקביל אני יודע לתת תשומת לב לחלקים הקטנים המרכיבים את השלם. לאחר הלימודים עבדתי באינטגרציה באחד מבתי התוכנה הגדולים:
-                            <a href='https://www.cognyte.com/'
-                                target='_blank'
-                                className={styles.link}>
-                                Cognyte
-                            </a>
-                            . דבר אשר הצריך ממני לרכוש ידע וכלים נוספים בצורה עצמאית הכוללים בין השאר:
-                            <strong> Ansible</strong>,
-                            <strong> Jenkins</strong>,
-                            <strong> Docker</strong>,
-                            <strong> Linux</strong>,
-                            <strong> SQL</strong>.
-                            בין תחומי האחריות שלי היו איתור וחקירת באגים, מתן מענה טכני לצוותי פיתוח ובקרת איכות, אינטגרציה של שרתים ושירותים וכן מתן תמיכה ללקוחות החברה. אני קורא הרבה ומרבה להתייעץ עם מומחים כך שאני בטוח שאין אתגר שאין ביכולתי להתגבר עליו. אני מתכנת נלהב במהלך היום ומתרגל יוגה אף יותר נלהב בערב. כבר אמרתי שאני ורסטילי וגמיש?
-                            <span>&#128516; </span>
-                            מאוד מעוניין להתפתח ולגדול בענף הפיתוח ופתוח ל
-                            <strong> BackEnd</strong>/
-                            <strong> FrontEnd</strong>/
-                            <strong> FullStack</strong>.
-                        </p>
-                    </div>
-                </div>
+        <div className={styles.container}>
+            <div className={styles.about}>
+                <h1>{dictionary.creator[html.lang]}</h1>
+                <p>
+                    {dictionary.aboutMe1[html.lang]}
+                    <strong> HTML</strong>,
+                    <strong> CSS</strong>,
+                    <strong> JavaScript</strong>,
+                    <strong> TypeScript</strong>,
+                    <strong> MongoDB</strong>,
+                    <strong> ExpressJS</strong>,
+                    <strong> ReactJS</strong>,
+                    <strong> NodeJS</strong>,
+                    <strong> Redux</strong>.
+                    {dictionary.aboutMe2[html.lang]}
+                    <CustomLink
+                        href={'https://www.cognyte.com/'}
+                        title={"Cognyte"}
+                        children={<span className={"linkItem"}>{'Cognyte'}</span>}
+                    />.
+                    {dictionary.aboutMe3[html.lang]}
+                    <strong> Ansible</strong>,
+                    <strong> Jenkins</strong>,
+                    <strong> Docker</strong>,
+                    <strong> Linux</strong>,
+                    <strong> SQL</strong>.
+                    {dictionary.aboutMe4[html.lang]}
+                    <span>&#128516; </span>.
+                    {dictionary.aboutMe5[html.lang]}
+                    <strong> BackEnd</strong>/
+                    <strong> FrontEnd</strong>/
+                    <strong> FullStack</strong>.
+                </p>
             </div>
         </div>
     )
-}
-Profile.getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
+};
+
+Profile.getLayout = Page.getLayout;
+
 export default Profile;

@@ -1,0 +1,38 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.input input {
+    line-height: 2.5rem;
+    font-size: large;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.input label {
+    position: relative;
+    top: 17px;
+    right: 3px;
+    left: 3px;
+    font-size: small;
+    color: Highlight;
+}
+
+.input span {
+    position: relative;
+    right: 0;
+    left: 0;
+    font-size: small;
+    color: red;
+}
+
+@media(min-width:768px) {
+    .input {
+        width: 80%;
+    }
+}

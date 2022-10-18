@@ -4,8 +4,10 @@ const nextConfig = {
     serverRuntimeConfig: {
         // Will only be available on the server side
         db: process.env.db,
-        emailUser: process.env.emailUser,
-        emailPass: process.env.emailPass,
+        email: process.env.email,
+        transporterUser: process.env.transporterUser,
+        transporterPassword: process.env.transporterPassword,
+        transporterHost: process.env.transporterHost,
     },
     publicRuntimeConfig: {
         // Will be available on both server and client

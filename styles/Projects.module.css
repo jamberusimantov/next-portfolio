@@ -14,6 +14,12 @@
 
 .projects h1 {
     color: var(--blue);
+    font-size: larger;
+}
+
+.projects h2 {
+    font-size: larger;
+    color: var(--black);
 }
 
 .grid {

@@ -1,125 +1,13 @@
-.input {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem auto;
-}
-
-.input p {
-    margin: 0;
-}
-
-.inputNBtnContainer {
-    display: flex;
-    align-items: flex-end;
-}
-
-.inputContainer {
-    width: 100%;
-    padding-left: 1rem;
-    position: relative;
-}
-
-.inputContainer textarea {
-    line-height: 2.5rem;
-    font-size: large;
-    height: 15rem;
-    width: 100%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.inputContainer input {
-    line-height: 2.5rem;
-    font-size: large;
-    width: 100%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.inputContainer hr {
-    margin: 0;
-}
-
-.inputContainer span {
-    position: absolute;
-    top: 0;
-    left: 1.5rem;
-    font-size: smaller;
-}
-
-.description {
-    line-height: 35px;
-}
-
-.descriptionBtn {
-    width: 35px;
-    height: 35px;
-    position: relative;
-}
-
 .submit {
     display: flex;
     width: 100%;
     margin: 1rem 0;
-}
-
-#email_description,
-#phone_description,
-#subject_description,
-#name_description,
-#message_description {
-    display: none;
-}
-
-#email_description.active,
-#phone_description.active,
-#subject_description.active,
-#name_description.active,
-#message_description.active {
-    display: block;
-}
-
-#email_btn,
-#phone_btn,
-#subject_btn,
-#name_btn,
-#message_btn {
-    background-image: url('/assets/svg/question.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#email_btn.active,
-#phone_btn.active,
-#subject_btn.active,
-#name_btn.active,
-#message_btn.active {
-    background-image: url('/assets/svg/close.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-@media(min-width:580px) {
-    .input {
-        flex-direction: row;
-    }
-    .tag {
-        width: 120px;
-    }
-    .inputNBtnContainer {
-        width: 100%
-    }
-    .submit {
-        max-width: 500px;
-        margin-right: auto;
-    }
+    justify-content: center;
 }
 
 @media(min-width:768px) {
-    .input {
+    .submit {
         width: 80%;
-    }
-    .inputNBtnContainer {
-        max-width: 500px;
+        margin: 1rem auto;
     }
 }

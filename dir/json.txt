@@ -1,0 +1,41 @@
+{
+    "name": "next-portfolio",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "test": "jest --testEnvironment=node --verbose --forceExit --watchAll --maxWorkers=1",
+        "test:ci": "jest --ci"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "next": "latest",
+        "mongoose": "^6.2.3",
+        "nodemailer": "^6.7.3",
+        "ts-node": "^10.9.1",
+        "react-redux": "^8.0.4",
+        "redux": "^4.2.0",
+        "@reduxjs/toolkit": "^1.8.6",
+        "@types/redux": "^3.6.0",
+        "@types/react-redux": "^7.1.24"
+    },
+    "devDependencies": {
+        "ts-jest": "^29.0.3",
+        "react-test-renderer": "^18.2.0",
+        "typescript": "4.6.4",
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^14.4.3",
+        "@types/jest": "^29.1.2",
+        "@types/node": "17.0.18",
+        "@types/nodemailer": "^6.4.6",
+        "@types/react": "18.0.21",
+        "eslint": "8.9.0",
+        "eslint-config-next": "12.1.0",
+        "jest-environment-jsdom": "^29.1.2"
+    }
+}
