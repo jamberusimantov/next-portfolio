@@ -16,18 +16,20 @@
 
 .input label {
     position: relative;
-    top: 17px;
-    right: 3px;
-    left: 3px;
+    top: .75em;
+    line-height: 1.5em;
+    width: fit-content;
+    padding: 0 .25em;
+    margin: 0 .25em;
     font-size: small;
+    background-color: white;
+}
+
+.label {
     color: Highlight;
 }
 
-.input span {
-    position: relative;
-    right: 0;
-    left: 0;
-    font-size: small;
+.error {
     color: red;
 }
 

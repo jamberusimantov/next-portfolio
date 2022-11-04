@@ -11,16 +11,11 @@
         "test:ci": "jest --ci"
     },
     "dependencies": {
-        "@reduxjs/toolkit": "^1.8.6",
-        "@types/react-redux": "^7.1.24",
-        "@types/redux": "^3.6.0",
         "mongoose": "^6.2.3",
         "next": "latest",
         "nodemailer": "^6.7.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-redux": "^8.0.4",
-        "redux": "^4.2.0",
         "ts-node": "^10.9.1"
     },
     "devDependencies": {

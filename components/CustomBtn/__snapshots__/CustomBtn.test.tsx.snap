@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomBtn renders correctly 1`] = `
+<div>
+  <button
+    class=" button"
+    data-testid="CustomBtn"
+    type="button"
+  >
+    <p>
+      Click Here
+    </p>
+    <div
+      class="response submit"
+    />
+  </button>
+</div>
+`;

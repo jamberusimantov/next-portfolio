@@ -46,14 +46,23 @@
     color: var(--black);
 }
 
-.linkBullet {
-    padding: 0 .5rem;
-    color: var(--blue);
-}
-
 @media(min-width:768px) {
     .links {
         display: flex;
         justify-content: space-between;
+    }
+}
+
+.submit {
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+@media(min-width:768px) {
+    .submit {
+        width: 80%;
+        margin: 1rem auto;
     }
 }

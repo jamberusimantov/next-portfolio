@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
-import PageHeadWithImage from "./PageHeadWithImage";
-import Layout from "../Layout";
+import styles from './Page.module.css'; 
+import { Menu, Breadcrumbs } from './nav';
 
 
 interface iPageProps {
@@ -8,27 +8,24 @@ interface iPageProps {
     pageName?: string,
     imageClassName?: string,
     children?: ReactElement,
-}
-export interface iPage {
-    (props: iPageProps): JSX.Element;
-    getLayout(page: ReactElement): JSX.Element;
-}
+};
 
-const Page: iPage = (props: iPageProps) => {
-    const { homepage, pageName, imageClassName, children } = props;
+const Page = (props: iPageProps) => {
     return (
         <div className="page">
-            <div className={!homepage ? "pageContainer" : ""}>
-                <PageHeadWithImage
-                    imageClassName={imageClassName}
-                    pageName={pageName}
-                />
-                {children}
+            <div className={!props.homepage ? "pageContainer" : ""}>
+                <div className={styles.navSection}>
+                    <div className={styles.navSectionContainer}>
+                        <div className={styles.nav}>
+                            {props.pageName ? <Breadcrumbs pageName={props.pageName} /> : <Menu />}
+                        </div>
+                    </div>
+                </div>
+                {props.imageClassName && <div className={`${styles.imageSection} ${props.imageClassName}`}></div>}
+                {props.children}
             </div>
         </div>
-    )
+    );
 }
-
-Page.getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
 
 export default Page;

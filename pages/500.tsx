@@ -1,20 +1,20 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import dynamic from 'next/dynamic';
-import Page from '../components/Page';
-import { iPage } from 'components/Page';
+import Layout from '../components/Layout';
+import Error from '../components/Error';
 
 
-const ServerError: iPage = () => {
-    const DynamicComponentWithNoSSR = dynamic(() => import('../components/Error'), { ssr: false });
+const ServerError = () => {
+    const DynamicPage = dynamic(() => import('../components/Page'), { ssr: false });
     return (
-        <Page
-            pageName={'badRequest'}
-            imageClassName=' '
-            children={<DynamicComponentWithNoSSR pageName='badRequest' />}
+        <DynamicPage
+            pageName='badRequest'
+            imageClassName='error'
+            children={<Error pageName='badRequest' />}
         />
     );
-}
+};
 
-ServerError.getLayout = Page.getLayout;
+ServerError.getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
 
 export default ServerError; 

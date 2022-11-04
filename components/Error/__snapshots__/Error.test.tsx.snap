@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error renders correctly 1`] = `
+<div>
+  <div
+    class="errorContainer"
+  >
+    <h1>
+      <span>
+        Oops
+      </span>
+      ...
+      דף לא נמצא
+    </h1>
+    <p>
+      https://portfoio-simantov.herokuapp.com
+    </p>
+    <div
+      class="links"
+    >
+      <a
+        class="link"
+        href="/"
+        title="Homepage"
+      >
+        <div
+          class="link"
+        >
+          Homepage
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;

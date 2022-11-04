@@ -1,7 +1,5 @@
-import React, { forwardRef } from 'react';
-import type { MouseEventHandler, CSSProperties } from 'react';
-import styles from './CustomBtn.module.css'
-import { JsxElement } from 'typescript';
+import React, { forwardRef, MouseEventHandler, CSSProperties } from 'react';
+import styles from './CustomBtn.module.css';
 
 
 interface iCustomBtnProps {
@@ -10,30 +8,26 @@ interface iCustomBtnProps {
     text?: string,
     status?: string,
     handleClick?: MouseEventHandler<HTMLButtonElement>;
-    handleMouseEnter?: MouseEventHandler<HTMLButtonElement>;
-    handleMouseLeave?: MouseEventHandler<HTMLButtonElement>;
     type?: keyof { "button": "", "submit": "", "reset": "" };
     title?: string;
     style?: CSSProperties;
-    children?: JsxElement
-}
+    testid?: string,
+};
 
-const CustomBtn = forwardRef<HTMLButtonElement, iCustomBtnProps>((props, ref) => {
-    const { id, className, text, status, handleClick, type = "button", handleMouseEnter, handleMouseLeave } = props;
-    return <button
+const CustomBtn = forwardRef<HTMLButtonElement, iCustomBtnProps>((props, ref) =>
+    <button
+        id={props.id}
+        className={`${props.className ?? ""} ${styles.button}`}
         ref={ref}
-        id={id}
-        className={`${className ?? ""} ${styles.button}`}
-        onClick={handleClick}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        type={type}
+        data-testid={props.testid}
+        onClick={props.handleClick}
+        type={props.type ?? "button"}
+        title={props.title}
         children={[
-            text && <p key={0}>{text}</p>,
-            status && <div className={status} key={1}></div>
+            props.text && <p key={0}>{props.text}</p>,
+            props.status && <div key={1} className={props.status}></div>
         ]}
     />
-
-});
+);
 
 export default CustomBtn;

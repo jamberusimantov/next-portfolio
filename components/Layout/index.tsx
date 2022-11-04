@@ -1,25 +1,21 @@
-import React, { ReactElement, useEffect, useContext } from 'react'
-import styles from './Layout.module.css'
-import Head from 'next/head'
-import Header from './Header'
-import Footer from './Footer'
-// import { getAppStateHtml } from "../../store/hooks"
-import { HTMLContext } from "../../pages/_app"
+import React, { ReactElement, useEffect, useContext } from 'react';
+import styles from './Layout.module.css';
+import Head from 'next/head';
+import Header from './Header';
+import Footer from './Footer';
+import HTMLContext from "../../contexts/htmlContext";
 
 
-interface iLayoutProps {
-    children: ReactElement
-}
+interface iLayoutProps { children: ReactElement };
 
 const Layout = (props: iLayoutProps) => {
-    // const html = getAppStateHtml();
     const { html } = useContext(HTMLContext);
     useEffect(() => {
-        const htmlEl = document.querySelector('html')
-        if (!htmlEl) return
-        htmlEl.dir = html.dir
-        htmlEl.lang = html.lang
-    }, [html])
+        const htmlEl = document.querySelector('html');
+        if (!htmlEl) return;
+        htmlEl.dir = html.dir;
+        htmlEl.lang = html.lang;
+    }, [html]);
 
     return (
         <div className={styles.layout}>
@@ -35,7 +31,7 @@ const Layout = (props: iLayoutProps) => {
             <main children={props.children} />
             <Footer />
         </div>
-    )
-}
+    );
+};
 
-export default Layout
+export default Layout;

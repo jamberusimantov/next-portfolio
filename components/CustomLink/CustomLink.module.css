@@ -1,3 +1,7 @@
 .disabled {
     pointer-events: none;
 }
+
+.link {
+    color: var(--blue);
+}

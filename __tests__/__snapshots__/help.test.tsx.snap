@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page: Help renders correctly 1`] = `
+<div>
+  <div
+    class="layout"
+  >
+    <header
+      class="header"
+    >
+      <div
+        class="headerTop"
+      >
+        <div
+          class="headerTopContainer"
+        >
+          <div
+            class="logo"
+          >
+            <div
+              class="logoContainer"
+            >
+              <span
+                style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+              >
+                <img
+                  data-nimg="fill"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+                <noscript />
+              </span>
+            </div>
+            <span
+              class="name"
+            >
+              Siman Tov Jamberu
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div
+        class="page"
+      >
+        <div
+          class="pageContainer"
+        >
+          <div
+            class="navSection"
+          >
+            <div
+              class="navSectionContainer"
+            >
+              <div
+                class="nav"
+              >
+                <div
+                  class="breadcrumbs"
+                >
+                  <a
+                    class="white"
+                    href="/"
+                    title="Homepage"
+                  >
+                    דף הבית
+                  </a>
+                  <span
+                    class="decoration"
+                  >
+                    &gt;
+                  </span>
+                  <a
+                    class="disabled"
+                    href="/help"
+                  >
+                    עזרה
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="container"
+          >
+            <div
+              class="help"
+            >
+              <h1>
+                עזרה
+              </h1>
+              <p>
+                portfoio-simantov.herokuapp.com מספק מידע מקצועי על סימן טוב ג'מברו. ניתן ואף רצוי לשאול שאלות וליצור קשר בכל נושא בקשר לאתר או אליי.
+              </p>
+              <h2>
+                מסמכים ב-portfoio-simantov.herokuapp.com
+              </h2>
+              <p>
+                portfoio-simantov.herokuapp.com מגיש מסמכים בתצורת PDF. על מנת להציג ולהדפיס יש צורך בתוכנה מתאימה. תוכנות מסוג זה זמינות למגוון מערכות הפעלה כגון: Windows, Mac OS, Linux וניתנות בדרך כלל להורדה ללא עלות. לדוגמא Adobe Reader.
+              </p>
+              <h2>
+                שאלות ומשוב ב-portfoio-simantov.herokuapp.com
+              </h2>
+              <p>
+                בכוונתי לשמור על מידע מקיף, מדוייק, מעודכן וידידותי למשתמש ככל שיעלה בידיי. האתר מנוהל  על ידי והוא בפיתוח מתמשך. אם צצה לך שאלה, משוב או הצעה לגביי האתר, אשמח לשמוע וניתן לפנות בעזרת טופס 
+                <a
+                  class="link"
+                  href="/contactByEmail"
+                  title="שלח דוא"ל"
+                >
+                  שלח דוא"ל
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="footer"
+    >
+      <div
+        class="footerTop"
+      >
+        <div
+          class="footerTopContainer"
+        >
+          <div
+            class="footerLinks"
+          >
+            <div
+              class="serviceLinks"
+            >
+              <h3>
+                שירותים
+              </h3>
+              <ul>
+                <li>
+                  <span
+                    class="decoration"
+                  >
+                    &gt;
+                  </span>
+                  <a
+                    class="white"
+                    href="/contact"
+                    title="Contact"
+                  >
+                    צור קשר
+                  </a>
+                </li>
+                <li>
+                  <span
+                    class="decoration"
+                  >
+                    &gt;
+                  </span>
+                  <a
+                    class="white"
+                    href="/help"
+                    title="Help"
+                  >
+                    עזרה
+                  </a>
+                </li>
+                <li>
+                  <span
+                    class="decoration"
+                  >
+                    &gt;
+                  </span>
+                  <a
+                    class="white"
+                    href="/archive"
+                    title="Archive"
+                  >
+                    ארכיון
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footerBottom"
+      >
+        <div
+          class="footerBottomContainer"
+        >
+          <div
+            class="footerLang"
+          >
+            <div
+              class="lang"
+            >
+              <button
+                class=" button"
+                type="button"
+              >
+                <p>
+                  English
+                </p>
+              </button>
+            </div>
+            <div
+              class="lang"
+            >
+              <button
+                class="currentLang button"
+                type="button"
+              >
+                <p>
+                  עברית
+                </p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+`;

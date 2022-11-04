@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page renders correctly 1`] = `
+<div>
+  <div
+    class="page"
+  >
+    <div
+      class="pageContainer"
+    >
+      <div
+        class="navSection"
+      >
+        <div
+          class="navSectionContainer"
+        >
+          <div
+            class="nav"
+          >
+            <div
+              class="menu"
+            >
+              <div
+                class="menuBtn"
+              >
+                <button
+                  class="hamburger"
+                >
+                  <div
+                    class="inner"
+                  >
+                    <span
+                      class="bar"
+                    />
+                    <span
+                      class="bar"
+                    />
+                    <span
+                      class="bar"
+                    />
+                  </div>
+                </button>
+              </div>
+              <ul
+                class="menuList "
+              >
+                <li>
+                  <a
+                    class="white"
+                    href="/profile"
+                    title="Profile"
+                  >
+                    פרופיל
+                  </a>
+                </li>
+                <hr
+                  class="hr"
+                />
+                <li>
+                  <a
+                    class="white"
+                    href="/projects"
+                    title="Projects"
+                  >
+                    עבודות
+                  </a>
+                </li>
+                <hr
+                  class="hr"
+                />
+                <li>
+                  <a
+                    class="white"
+                    href="/contact"
+                    title="Contact"
+                  >
+                    צור קשר
+                  </a>
+                </li>
+                <hr
+                  class="hr"
+                />
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

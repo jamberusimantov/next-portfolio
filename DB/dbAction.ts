@@ -7,26 +7,15 @@ export interface iResponse {
     data?: any,
     error?: string,
     message?: string,
-}
+};
 
 interface iDBProps {
     collection: mongoose.Model<any, {}, {}, {}>,
     method: keyof { GET: "", PUT: "", POST: "", DELETE: "" };
     data: { id?: string },
 }
-interface iDBResponse extends iResponse {
-    data?: mongoose.Document | object;
-}
 
-interface iValidatorProps {
-    response: mongoose.Document | null;
-    method: keyof { GET: "", PUT: "", POST: "", DELETE: "" };
-}
-interface iValidatorResponse extends iResponse {
-    data?: mongoose.Document;
-}
-
-const DB = async (props: iDBProps): Promise<iDBResponse> => {
+const DB = async (props: iDBProps) => {
     const { collection, method, data } = props;
     let response: mongoose.Document | null = null;
     try {
@@ -69,7 +58,12 @@ const DB = async (props: iDBProps): Promise<iDBResponse> => {
     }
 }
 
-const validator = (props: iValidatorProps): iValidatorResponse => {
+interface iValidatorProps {
+    response: mongoose.Document | null;
+    method: keyof { GET: "", PUT: "", POST: "", DELETE: "" };
+}
+
+const validator = (props: iValidatorProps) => {
     const { response, method } = props;
     if (!response) return ({ success: false, message: method + ' returned undefined' });
     if (!(response instanceof Object) || response == null) return ({ success: false, message: method + ' returned invalid type' });

@@ -1,6 +1,5 @@
-import React, { forwardRef } from "react";
-import type { ChangeEventHandler, FocusEventHandler, CSSProperties } from "react";
-import styles from './CustomInput.module.css'
+import React, { forwardRef, ChangeEventHandler, FocusEventHandler, CSSProperties } from "react";
+import styles from './CustomInput.module.css';
 
 
 interface iCustomInputProps {
@@ -14,28 +13,30 @@ interface iCustomInputProps {
     type?: keyof { "text": "", "email": "", "tel": "" };
     placeholder?: string;
     style?: CSSProperties;
-}
+    testid?: string,
+};
 
-const CustomInput = forwardRef<HTMLInputElement, iCustomInputProps>((props, ref) => {
-    const { title, required, handleBlur, type = "text", placeholder, style, value, handleChange, description, hasError } = props;
-    return (
-        <div className={styles.input}>
-            <label htmlFor={title} children={title} />
-            <input
-                ref={ref}
-                title={title}
-                name={title}
-                value={value}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                type={type}
-                required={required}
-                placeholder={placeholder}
-                style={style}
-            />
-            {hasError && required && <span children={" * " + (description ?? "")} />}
-        </div>
-    );
-});
+const CustomInput = forwardRef<HTMLInputElement, iCustomInputProps>((props, ref) =>
+    <div className={styles.input}>
+        <label
+            htmlFor={props.title}
+            className={props.hasError ? styles.error : styles.label}
+            children={props.hasError ? " * " + props.description : props.title}
+        />
+        <input
+            ref={ref}
+            title={props.title}
+            data-testid={props.testid}
+            name={props.title}
+            value={props.value}
+            onChange={props.handleChange}
+            onBlur={props.handleBlur}
+            type={props.type}
+            required={props.required}
+            placeholder={props.placeholder}
+            style={props.style}
+        />
+    </div>
+);
 
 export default CustomInput;

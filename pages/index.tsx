@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Page from '../components/Page';
-import { iPage } from 'components/Page';
+import Layout from '../components/Layout';
 
 
-const Home: iPage = () => <Page
-    imageClassName={" "}
+const Home = () => <Page
+    imageClassName={"homepage"}
     homepage
 />
 
-Home.getLayout = Page.getLayout;
+Home.getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
 
 export default Home;

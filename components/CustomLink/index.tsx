@@ -1,49 +1,36 @@
-import React, { forwardRef } from "react";
-import type { MouseEventHandler } from "react";
+import React, { forwardRef, ReactElement } from "react";
+import styles from "./CustomLink.module.css";
 import Link from 'next/link';
-import styles from "./Link.module.css"
+
 
 interface iCustomLinkProps {
-    children?: JSX.Element | JSX.Element[] | string,
-    onClick?: MouseEventHandler<HTMLAnchorElement>;
+    children?: ReactElement | ReactElement[] | string,
     href?: string,
     target?: keyof { "_blank": "" },
     title?: string,
     disabled?: boolean,
+    testid?: string,
     className?: string,
-}
+    prefetch?: boolean 
+};
 
-const CustomLink = forwardRef<HTMLAnchorElement, iCustomLinkProps>((props, ref) => {
-    const { href = "/path/to/somewhere", children = "CLICK", target, title, disabled } = props;
-
-    return <Link
-        href={href}
-        children={
-            <AnchorWrapper
-                children={children}
-                target={target}
-                title={title}
-                className={disabled ? styles.disabled : undefined}
-            />}
-        ref={ref}
+const CustomLink = forwardRef<HTMLAnchorElement, iCustomLinkProps>((props, ref) =>
+    <Link
+        href={props.href ?? "/path/to/somewhere"}
         shallow
         replace
         passHref
-        prefetch={false}
-
+        prefetch={props.prefetch ?? false}
+        children={<a
+            data-testid={props.testid}
+            ref={ref}
+            target={props.target}
+            title={props.title}
+            children={props.children?? "/path/to/somewhere"}
+            className={props.disabled ? styles.disabled : props.className ?? styles.link}
+        />
+        }
     />
-});
-
-const AnchorWrapper = forwardRef<HTMLAnchorElement, iCustomLinkProps>((props, ref) => {
-    const { href, children, onClick } = props;
-    return <a
-        {...props}
-        href={href}
-        children={children}
-        onClick={(e) => onClick && onClick(e)}
-        ref={ref}
-        data-testid="link"
-    />
-});
+);
 
 export default CustomLink;

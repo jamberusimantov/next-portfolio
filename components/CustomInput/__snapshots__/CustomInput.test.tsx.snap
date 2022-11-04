@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomInput renders correctly 1`] = `
+<div>
+  <div
+    class="input"
+  >
+    <label
+      class="label"
+      for="Language"
+    >
+      Language
+    </label>
+    <input
+      data-testid="CustomInput"
+      name="Language"
+      title="Language"
+      value="English"
+    />
+  </div>
+</div>
+`;

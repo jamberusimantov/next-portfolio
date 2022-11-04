@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomLink renders correctly 1`] = `
+<div>
+  <a
+    class="link"
+    data-testid="CustomLink"
+    href="/path/to/somewhere"
+  >
+    /path/to/somewhere
+  </a>
+</div>
+`;

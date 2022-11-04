@@ -1,0 +1,271 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page: Contact renders correctly 1`] = `
+<div>
+  <div
+    class="layout"
+  >
+    <header
+      class="header"
+    >
+      <div
+        class="headerTop"
+      >
+        <div
+          class="headerTopContainer"
+        >
+          <div
+            class="logo"
+          >
+            <div
+              class="logoContainer"
+            >
+              <span
+                style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+              >
+                <img
+                  data-nimg="fill"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+                <noscript />
+              </span>
+            </div>
+            <span
+              class="name"
+            >
+              Siman Tov Jamberu
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div
+        class="page"
+      >
+        <div
+          class="pageContainer"
+        >
+          <div
+            class="navSection"
+          >
+            <div
+              class="navSectionContainer"
+            >
+              <div
+                class="nav"
+              >
+                <div
+                  class="breadcrumbs"
+                >
+                  <a
+                    class="white"
+                    href="/"
+                    title="Homepage"
+                  >
+                    דף הבית
+                  </a>
+                  <span
+                    class="decoration"
+                  >
+                    &gt;
+                  </span>
+                  <a
+                    class="disabled"
+                    href="/contact"
+                  >
+                    צור קשר
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="container"
+          >
+            <div
+              class="contact"
+            >
+              <h1>
+                צור קשר
+              </h1>
+              <h2>
+                יש לך שאלה או גילית סקרנות? אפשר להתקשר או לשלוח דוא"ל. אפשר גם לשלוח הודעה בוואטסאפ או בלינקדאין.
+              </h2>
+              <div
+                class="links"
+              >
+                <ul>
+                  <li>
+                    <span
+                      class="decoration"
+                    >
+                      &gt;
+                    </span>
+                    <a
+                      class="link"
+                      href="tel:+972528405624"
+                      title="חייג 052-8405624"
+                    >
+                      חייג 052-8405624
+                    </a>
+                  </li>
+                  <li>
+                    <span
+                      class="decoration"
+                    >
+                      &gt;
+                    </span>
+                    <a
+                      class="link"
+                      href="/contactByEmail"
+                      title="שלח דוא"ל"
+                    >
+                      שלח דוא"ל
+                    </a>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <span
+                      class="decoration"
+                    >
+                      &gt;
+                    </span>
+                    <a
+                      class="link"
+                      href="https://api.whatsapp.com/send?phone=+972528405624&text=היי סימן-טוב אשמח לשמוע עוד"
+                      title="שלח וואטסאפ"
+                    >
+                      שלח וואטסאפ
+                    </a>
+                  </li>
+                  <li>
+                    <span
+                      class="decoration"
+                    >
+                      &gt;
+                    </span>
+                    <a
+                      class="link"
+                      href="https://www.linkedin.com/in/siman-tov-jamberu/"
+                      title="סימן טוב ג'מברו בלינקדאין"
+                    >
+                      סימן טוב ג'מברו בלינקדאין
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="footer"
+    >
+      <div
+        class="footerTop"
+      >
+        <div
+          class="footerTopContainer"
+        >
+          <div
+            class="footerLinks"
+          >
+            <div
+              class="serviceLinks"
+            >
+              <h3>
+                שירותים
+              </h3>
+              <ul>
+                <li>
+                  <span
+                    class="decoration"
+                  >
+                    &gt;
+                  </span>
+                  <a
+                    class="white"
+                    href="/contact"
+                    title="Contact"
+                  >
+                    צור קשר
+                  </a>
+                </li>
+                <li>
+                  <span
+                    class="decoration"
+                  >
+                    &gt;
+                  </span>
+                  <a
+                    class="white"
+                    href="/help"
+                    title="Help"
+                  >
+                    עזרה
+                  </a>
+                </li>
+                <li>
+                  <span
+                    class="decoration"
+                  >
+                    &gt;
+                  </span>
+                  <a
+                    class="white"
+                    href="/archive"
+                    title="Archive"
+                  >
+                    ארכיון
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footerBottom"
+      >
+        <div
+          class="footerBottomContainer"
+        >
+          <div
+            class="footerLang"
+          >
+            <div
+              class="lang"
+            >
+              <button
+                class=" button"
+                type="button"
+              >
+                <p>
+                  English
+                </p>
+              </button>
+            </div>
+            <div
+              class="lang"
+            >
+              <button
+                class="currentLang button"
+                type="button"
+              >
+                <p>
+                  עברית
+                </p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+`;

@@ -3,11 +3,27 @@ body {
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    --white: #FFFFFF;
+    --offWhite: #ddd;
+    --black: #333;
+    --black-coal: #111;
+    --blue: #4078c0;
+    /* --blue: #0070f3; */
+    --apricot: #F4CBB2;
+    --green: #6cc644;
+    --orange: #c9510c;
+    --red: #bd2c00;
+    --purple: #6e5494;
+    --aero: #7DBBE6;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 * {
@@ -117,11 +133,6 @@ a {
 
 .white {
     color: var(--white) !important;
-}
-
-.linkItem:hover {
-    cursor: pointer;
-    text-decoration: underline;
 }
 
 .decoration {
