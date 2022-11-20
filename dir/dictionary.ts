@@ -1,5 +1,44 @@
-type dictionaryType = { [key: string]: { [key: string]: string } }
-const dictionary: dictionaryType = {
+type keyType = { "en-US": string, "he-IL": string }
+interface iDictionary {
+    homepage: keyType,
+    profile: keyType,
+    projects: keyType,
+    contact: keyType,
+    contactByEmail: keyType,
+    help: keyType,
+    archive: keyType,
+    services: keyType,
+    messages: keyType,
+    pageNotFound:keyType,
+    badRequest: keyType,
+    contactTitle: keyType,
+    call: keyType,
+    whatsapp: keyType,
+    whatsappGreeting: keyType,
+    linkedin: keyType,
+    emailTitle:keyType,
+    formMandatoryFields: keyType,
+    formFieldMessage: keyType,
+    formFieldName: keyType,
+    formFieldSubject: keyType,
+    formFieldPhone: keyType,
+    formFieldEmail: keyType,
+    formSubmit:keyType,
+    formDescriptionMessage: keyType,
+    formDescriptionName: keyType,
+    formDescriptionSubject:keyType,
+    formDescriptionPhone: keyType,
+    formDescriptionEmail: keyType,
+    creator: keyType,
+    profileText: keyType,
+    helpTitle:keyType,
+    helpDocumentsTitle: keyType,
+    helpDocumentsText: keyType,
+    helpQuestionsTitle: keyType,
+    helpQuestionsText: keyType,
+}
+
+const dictionary: iDictionary = {
     // pages 
     homepage: {
         "en-US": "Homepage",
@@ -127,8 +166,8 @@ const dictionary: dictionaryType = {
         "he-IL": "סימן טוב גמברו"
     },
     profileText: {
-        "en-US": "As a developer I always find myself broadening my knowledge and expanding my interests and I just love it. I'm naturally curios and in constant hunger to learn more and sharpen my skills. Recently I completed theoretical and practical studies in programming including: HTML, CSS, JavaScript, TypeScript, MongoDB, ExpressJS, ReactJS, NodeJS, Redux.I have conceptual thinking and concurrently I remember to pay attention to sub-components. Currently I work as System Integrator on Cognyte. During my work I kept learning and acquired new skills and knowledge including: Ansible, Jenkins, Docker, Linux, SQL.Among my responsibilities were: integrating servers and services, locating and investigating system errors and bugs, being a focal point for technical support for clients and internal and also write internal procedures documents. I read a lot and consult professionals so I am sure there's no challenge I can't overcome. On my free time I enjoy writing automation scripts and practicing yoga. Did i mention I'm versatile and flexible?😄 .I'm currently looking for my first position as BackEnd/ FrontEnd/ FullStack.",
-        "he-IL": "בתור מפתח אני תמיד מוצא את עצמי מרחיב את הידע ואני פשוט אוהב את זה. יש בי סקרנות טבעית ורעב ללמוד ולהתפתח ברמה המקצועית וברמה האישית. לאחרונה סיימתי לימודים תיאורטיים ומעשיים בפיתוח ותכנות הכוללים בין השאר HTML, CSS, JavaScript, TypeScript, MongoDB, ExpressJS, ReactJS, NodeJS, Redux.יש לי תפיסה קונספטואלית ברמת המאקרו ובמקביל אני יודע לתת תשומת לב לחלקים הקטנים המרכיבים את השלם. כרגע אני עובד באינטגרציה באחד מבתי התוכנה הגדולים: Cognyte. במהלך עבודתי המשכתי בלימודים עצמאים ורכשתי כלים נוספים הכוללים בין השאר: Ansible, Jenkins, Docker, Linux, SQL. בין תחומי האחריות שלי: אינטגרציה של שרתים ושירותים, איתור וחקירת באגים, מתן מענה טכני לצוותי פיתוח ובקרת איכות וללקוחות החברה וכתיבת מסמכים לשימוש פנימי. אני קורא הרבה ומרבה להתייעץ עם מומחים כך שאני בטוח שאין אתגר שאין ביכולתי להתגבר עליו. בזמני הפנוי אני נהנה לכתוב אוטומציות ולתרגל יוגה. כבר אמרתי שאני ורסטילי וגמיש?😄 .אני מאוד מעוניין להתפתח ולגדול בענף הפיתוח ומחפש את המשרה הראשונה שלי כמפתח BackEnd/ FrontEnd/ FullStack."
+        "en-US": "As a developer I always find myself broadening my knowledge and expanding my interests and I just love it. I'm naturally curios and in constant hunger to learn more and sharpen my skills. Recently I completed theoretical and practical studies in programming including: HTML, CSS, JavaScript, TypeScript, MongoDB, ExpressJS, ReactJS, NodeJS, Redux. I have conceptual thinking and concurrently I remember to pay attention to sub-components. Currently I work as System Integrator on Cognyte. During my work I kept learning and acquired new skills and knowledge including: Ansible, Jenkins, Docker, Linux, SQL. Among my responsibilities were: integrating servers and services, locating and investigating system errors and bugs, being a focal point for technical support internally and also write internal procedures documents. I read a lot and consult professionals so I am sure there's no challenge I can't overcome. On my free time I enjoy writing automation scripts and practicing yoga. Did i mention I'm versatile and flexible?😄 .I'm currently looking for my first position as BackEnd/ FrontEnd/ FullStack.",
+        "he-IL": "בתור מפתח אני תמיד מוצא את עצמי מרחיב את הידע ואני פשוט אוהב את זה. יש בי סקרנות טבעית ורעב ללמוד ולהתפתח ברמה המקצועית וברמה האישית. לאחרונה סיימתי לימודים תיאורטיים ומעשיים בפיתוח ותכנות הכוללים בין השאר HTML, CSS, JavaScript, TypeScript, MongoDB, ExpressJS, ReactJS, NodeJS, Redux.יש לי תפיסה קונספטואלית ברמת המאקרו ובמקביל אני יודע לתת תשומת לב לחלקים הקטנים המרכיבים את השלם. כרגע אני עובד בתפקיד SI בחברת Cognyte. במהלך עבודתי המשכתי בלימודים עצמאים ורכשתי כלים נוספים הכוללים בין השאר: Ansible, Jenkins, Docker, Linux, SQL. בין תחומי האחריות שלי: אינטגרציה של שרתים ושירותים, איתור וחקירת באגים, מתן מענה טכני לצוותי פיתוח ובקרת איכות וכתיבת מסמכים לשימוש פנימי. אני קורא הרבה ומרבה להתייעץ עם מומחים כך שאני בטוח שאין אתגר שאין ביכולתי להתגבר עליו. בזמני הפנוי אני נהנה לכתוב אוטומציות ולתרגל יוגה. כבר אמרתי שאני ורסטילי וגמיש?😄 .אני מאוד מעוניין להתפתח ולגדול בענף הפיתוח ומחפש את המשרה הראשונה שלי כמפתח BackEnd/ FrontEnd/ FullStack."
     },
     // help page
     helpTitle: {

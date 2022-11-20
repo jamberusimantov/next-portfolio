@@ -4,21 +4,18 @@ import type { NextPage } from 'next';
 import '../styles/globals.css';
 import HTMLContext from "../contexts/htmlContext";
 import { iHtml } from "../contexts/htmlContext";
+import paint from "../dir/colorScheme"
 
+
+console.log(paint.Green + "\n\n👋 Welcome to " + paint.Blue + "Portfolio! 🤝\n\n" +
+  "Keep your face to the 🌞 and\n\nyou will never see the shadows.\n\n" +
+  paint.Green + "Have a GREAT day 🖖 \n\n" + "Made with ❤️ in Israel\n\n" +
+  paint.Red + "👮 All rights reserved 👮 \n\n" +
+  paint.Green + "© 2022 Siman tov Jamberu.\n\n💼 https://github.com/jamberusimantov 💼\n\n" +
+  "💬 https://www.linkedin.com/in/siman-tov-jamberu/ 💬\n\n");
 
 type iComponent = NextPage & { getLayout: (page: ReactElement) => ReactNode };
-
 interface iAppPropsWithLayout extends AppProps { Component: iComponent }
-
-console.log("\x1b[32mWelcome to Portfolio!");
-console.log("\x1b[34mKeep your face to the sun and");
-console.log("\x1b[34myou will never see the shadows.");
-console.log("\x1b[32mHave a great day");
-console.log("\x1b[32mMade with" + " " + "\x1b[31m❤ " + " " + "\x1b[32min" + " " + "\x1b[34mIsrael");
-console.log("\x1b[32m© 2022 Siman tov Jamberu.");
-console.log("\x1b[31mAll rights reserved.");
-console.log("\x1b[34mhttps://github.com/jamberusimantov");
-console.log("\x1b[34mhttps://www.linkedin.com/in/siman-tov-jamberu/");
 
 const MyApp = ({ Component, pageProps }: iAppPropsWithLayout) => {
   const [html, setHtml] = useState<iHtml>({ lang: 'he-IL', dir: 'rtl' });

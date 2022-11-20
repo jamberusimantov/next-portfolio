@@ -13,10 +13,15 @@ describe('Page', () => {
     });
     test('renders correctly', async () => {
         let el: HTMLElement = document.createElement("div");
+        let getTitle: Function = () => { };
         await act(async () => {
-            let { container } = await render(<Page />);
+            let { container, getByTitle } = await render(<Page />);
             el = container;
+            getTitle = getByTitle;
         });
         expect(el).toMatchSnapshot();
+        expect(getTitle(/Profile/));
+        expect(getTitle(/Projects/));
+        expect(getTitle(/Contact/));
     });
 });

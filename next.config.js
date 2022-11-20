@@ -11,6 +11,7 @@ const nextConfig = {
     },
     publicRuntimeConfig: {
         // Will be available on both server and client
+
     },
 }
 

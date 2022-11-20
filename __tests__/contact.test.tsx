@@ -12,12 +12,15 @@ describe('Page: Contact', () => {
         expect(document.createElement('div')).not.toBeNull();
     });
     test('renders correctly', async () => {
-        let el: HTMLElement = document.createElement("div");
+        let getText: Function = () => { };
         await act(async () => {
             const getLayout = Contact.getLayout ?? (page => page);
-            const {container} = await render(getLayout(<Contact />));
-            el = container;
+            const {getByText} = await render(getLayout(<Contact />));
+            getText = getByText;
         })
-        expect(el).toMatchSnapshot();
+        expect(getText(/חייג 052-8405624/));
+        expect(getText(/שלח דוא"ל/));
+        expect(getText(/שלח וואטסאפ/));
+        expect(getText(/סימן טוב ג'מברו בלינקדאין/));
     });
 });

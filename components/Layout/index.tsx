@@ -10,6 +10,7 @@ interface iLayoutProps { children: ReactElement };
 
 const Layout = (props: iLayoutProps) => {
     const { html } = useContext(HTMLContext);
+    
     useEffect(() => {
         const htmlEl = document.querySelector('html');
         if (!htmlEl) return;

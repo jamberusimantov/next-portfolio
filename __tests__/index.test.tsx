@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
- import React, { ReactElement, JSXElementConstructor } from "react";
+ import React from "react";
  import { describe, expect, test } from '@jest/globals';
  import { render, act } from '@testing-library/react';
  import Home from '../pages/index';

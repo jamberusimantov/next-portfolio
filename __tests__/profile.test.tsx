@@ -9,7 +9,7 @@
  
  describe('Page: Profile', () => {
     test('use jsdom in this test file', () => {
-        expect(document.createElement('div')).not.toBeNull();
+        expect(document.createElement('div')).not.toBeNull(); 
     });
     test('renders correctly', async () => {
         let el: HTMLElement = document.createElement("div");

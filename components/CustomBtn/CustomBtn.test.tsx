@@ -20,6 +20,11 @@ describe('CustomBtn', () => {
                 text="Click Here"
                 testid="CustomBtn"
                 status="response submit"
+                handleClick={(e) => {
+                    const btn = e.target as HTMLButtonElement;
+                    if (!btn.firstChild) return;
+                    btn.firstChild.textContent = "Clicked";
+                }}
             />);
             el = container;
             getText = getByText;
@@ -27,7 +32,7 @@ describe('CustomBtn', () => {
         });
         expect(el).toMatchSnapshot();
         expect(getText(/Click Here/));
-        getTestId("CustomBtn").firstChild.textContent = "Clicked";
+        getTestId("CustomBtn").click();
         expect(getText(/Clicked/));
     });
 });

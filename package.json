@@ -8,7 +8,7 @@
         "start": "next start",
         "lint": "next lint",
         "test": "jest --testEnvironment=node --verbose --forceExit --watchAll --maxWorkers=1",
-        "test:ci": "jest --ci"
+        "test:i": "cypress open"
     },
     "dependencies": {
         "mongoose": "^6.2.3",
@@ -27,9 +27,11 @@
         "@types/nodemailer": "^6.4.6",
         "@types/react": "18.0.21",
         "@types/react-test-renderer": "^18.0.0",
+        "cypress": "^11.1.0",
         "eslint": "8.9.0",
         "eslint-config-next": "12.1.0",
         "jest-environment-jsdom": "^29.1.2",
+        "jest-fetch-mock": "^3.0.3",
         "react-test-renderer": "^18.2.0",
         "ts-jest": "^29.0.3",
         "typescript": "4.6.4"

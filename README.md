@@ -1,10 +1,17 @@
-# Welcome to Portfolio!
-just another web dev portfolio :) 
+ # Welcome to Portfolio! 👋
 
-Keep your face to the sun and you will never see the shadows.
+Keep your face to the 🌞
 
-Have a GREAT day
-# NOT DEPLOYED YET 
-https://portfoio-simantov.herokuapp.com/
+and you will never see the shadows.
 
-Made with ❤  in Israel © 2022 Siman tov Jamberu. All rights reserved.
+# Have a GREAT day 🖖 
+
+Made with ❤️ in Israel
+
+👮 All rights reserved 👮
+
+© 2022 Siman tov Jamberu
+
+💼 https://github.com/jamberusimantov 💼
+
+💬 https://www.linkedin.com/in/siman-tov-jamberu/ 💬

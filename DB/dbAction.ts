@@ -1,26 +1,11 @@
-import mongoose from 'mongoose'
-import dbConnection from './connection';
+import mongoose, { ObjectId } from 'mongoose';
 
-
-export interface iResponse {
-    success: boolean,
-    data?: any,
-    error?: string,
-    message?: string,
-};
-
-interface iDBProps {
-    collection: mongoose.Model<any, {}, {}, {}>,
-    method: keyof { GET: "", PUT: "", POST: "", DELETE: "" };
-    data: { id?: string },
-}
 
 const DB = async (props: iDBProps) => {
     const { collection, method, data } = props;
     let response: mongoose.Document | null = null;
     try {
         if (!collection || !method || !data) throw new Error("missing params one or more: collection, method, data");
-        await dbConnection();
         console.log(`${method} ${collection.modelName}s DB : `, data);
         const id = data.id;
         id && delete data.id;
@@ -57,13 +42,33 @@ const DB = async (props: iDBProps) => {
         return ({ success: false, data, error: err.message })
     }
 }
+export interface iResponse {
+    success: boolean,
+    data?: any,
+    error?: string,
+    message?: string,
+};
 
+interface iDBProps {
+    collection: mongoose.Model<any, {}, {}, {}>,
+    method: keyof { GET: "", PUT: "", POST: "", DELETE: "" };
+    data: { 
+        name?: String,
+        email?: String,
+        message?: String,
+        phone?: String,
+        subject?: String,
+        id?: string,    
+        _id?:ObjectId,
+
+     },
+}
 interface iValidatorProps {
     response: mongoose.Document | null;
     method: keyof { GET: "", PUT: "", POST: "", DELETE: "" };
 }
 
-const validator = (props: iValidatorProps) => {
+export const validator = (props: iValidatorProps) => {
     const { response, method } = props;
     if (!response) return ({ success: false, message: method + ' returned undefined' });
     if (!(response instanceof Object) || response == null) return ({ success: false, message: method + ' returned invalid type' });

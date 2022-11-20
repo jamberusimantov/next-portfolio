@@ -13,7 +13,7 @@ exports[`Error renders correctly 1`] = `
       דף לא נמצא
     </h1>
     <p>
-      https://portfoio-simantov.herokuapp.com
+      portfoio-simantov.herokuapp.com
     </p>
     <div
       class="links"

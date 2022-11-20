@@ -1,14 +1,7 @@
 import React, {
-    useState,
-    useContext,
-    ReactElement,
-    ChangeEvent,
-    ChangeEventHandler,
-    FocusEvent,
-    FocusEventHandler,
-    FormEvent,
-    FormEventHandler,
-    Dispatch,
+    useState, useContext, ReactElement,
+    ChangeEvent, ChangeEventHandler, FocusEvent,
+    FocusEventHandler, FormEventHandler, Dispatch,
     SetStateAction
 } from 'react';
 import styles from '../styles/Services.module.css';
@@ -19,29 +12,6 @@ import CustomBtn from '../components/CustomBtn';
 import CustomInput from '../components/CustomInput';
 import Layout from "../components/Layout";
 
-
-interface iInputs {
-    subject: string,
-    message: string,
-    name: string,
-    email: string,
-    phone: string,
-};
-
-interface iHasError {
-    subject: boolean,
-    message: boolean,
-    name: boolean,
-    email: boolean,
-    phone: boolean,
-};
-
-interface iResponse {
-    success: boolean,
-    data: any,
-    error?: string,
-    message?: string,
-};
 
 const Email = () => {
     const { html } = useContext(HTMLContext);
@@ -109,7 +79,7 @@ const Email = () => {
     const handleSubmit: FormEventHandler = async (e) => {
         e.preventDefault();
         try {
-            const res: iResponse = await fetcher('/api/message', 'POST', form);
+            const res: iResponse = await fetcher('http://localhost:3000/api/message', 'POST', form);
             if (!res) throw new Error("submit email return falsi");
             setResponse(res);
             res.success && setForm({
@@ -145,17 +115,13 @@ const Email = () => {
     );
 }
 
-interface iForm {
-    form: { state: iInputs, setState: Dispatch<SetStateAction<iInputs>> },
-    errors?: { state: iHasError, setState: Dispatch<SetStateAction<iHasError>> },
-    response?: iResponse,
-    handleChange: (key: string) => ChangeEventHandler<HTMLInputElement>,
-    handleBlur?: (key: string) => FocusEventHandler<HTMLInputElement>,
-    handleSubmit: FormEventHandler<Element>,
-};
-
 const Form = (props: iForm) => {
     const { html } = useContext(HTMLContext);
+    const status = !props.response ?
+        'submit'
+        : props.response.success ?
+            'success'
+            : 'failure';
     return (
         <div className={styles.email}>
             <form onSubmit={props.handleSubmit}>
@@ -216,11 +182,16 @@ const Form = (props: iForm) => {
                     <CustomBtn
                         type="submit"
                         className={styles.submitBtn}
-                        text={dictionary.formSubmit[html.lang]}
-                        status={`response ${!props.response
-                            ? 'submit'
-                            : props.response.success
-                                ? 'success'
+                        title={"Submit"}
+                        text={!props.response ?
+                            'submit'
+                            : props.response.success ?
+                                'success'
+                                : 'failure'}
+                        status={`response ${!props.response ?
+                            'submit'
+                            : props.response.success ?
+                                'success'
                                 : 'failure'
                             }`}
                     />
@@ -229,8 +200,38 @@ const Form = (props: iForm) => {
         </div>
     );
 };
+interface iInputs {
+    subject: string,
+    message: string,
+    name: string,
+    email: string,
+    phone: string,
+};
 
-const fetcher = async (url: string, method = 'GET', body?: object): Promise<any> => {
+interface iHasError {
+    subject: boolean,
+    message: boolean,
+    name: boolean,
+    email: boolean,
+    phone: boolean,
+};
+
+interface iResponse {
+    success: boolean,
+    data: any,
+    error?: string,
+    message?: string,
+};
+interface iForm {
+    form: { state: iInputs, setState: Dispatch<SetStateAction<iInputs>> },
+    errors?: { state: iHasError, setState: Dispatch<SetStateAction<iHasError>> },
+    response?: iResponse,
+    handleChange: (key: string) => ChangeEventHandler<HTMLInputElement>,
+    handleBlur?: (key: string) => FocusEventHandler<HTMLInputElement>,
+    handleSubmit: FormEventHandler<Element>,
+};
+
+export const fetcher = async (url: string, method = 'GET', body?: object): Promise<any> => {
     try {
         const response = await fetch(url, { method, body: body ? JSON.stringify(body) : undefined });
         return await response.json();

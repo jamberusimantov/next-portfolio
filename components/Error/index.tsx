@@ -14,7 +14,7 @@ const Error = (props: iErrorProps) => {
         <div className={styles.errorContainer}>
             <h1><span>Oops</span>...{dictionary[props.pageName][html.lang]}</h1>
             {props.pageName == "pageNotFound"
-                ? <p>https://portfoio-simantov.herokuapp.com{useRouter()?.asPath}</p>
+                ? <p>portfoio-simantov.herokuapp.com{useRouter()?.asPath}</p>
                 : <h3>Sorry for any inconvenience this may cause</h3>
             }
             <div className={styles.links}>

@@ -3,8 +3,8 @@ import getConfig from 'next/config';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
 import nodemailer from 'nodemailer';
 import Messages from '../../DB/modals/Messages';
-import DB from '../../DB/dbAction';
-import { iResponse } from "../../DB/dbAction";
+import DB,{ iResponse } from '../../DB/dbAction';
+import dbConnection from '../../DB/connection';
 
 
 const handler = async (
@@ -14,13 +14,14 @@ const handler = async (
     const body = JSON.parse(req.body);
     try {
         let dbResponse;
+        await dbConnection();
         switch (req.method) {
             case 'POST': {
                 const isValid = !!body.email && !!body.name && !!body.message;
                 if (!isValid) throw new Error(`${req.method} aborted, missing params for action`);
                 body.subject = body.subject ?? 'אשמח לשמוע עוד';
                 body.phone = body.phone ?? 'לא צוין טלפון';
-                dbResponse = await DB({ collection: Messages, data: body, method: req.method });
+                dbResponse = await DB({ collection: Messages, data: body, method: req.method }); 
                 if (!dbResponse.success) throw dbResponse.error;
                 const mailResponse = await sendEmail(body);
                 if (mailResponse.error) throw mailResponse.error;
@@ -35,7 +36,7 @@ const handler = async (
 interface iCustomEmailProps {
     name: string,
     email: string,
-    phone: string,
+    phone: string, 
     subject: string,
     message: string,
 };

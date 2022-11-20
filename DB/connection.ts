@@ -1,20 +1,23 @@
-import mongoose from 'mongoose'
-import getConfig from 'next/config';
+import mongoose from 'mongoose';
+import paint from "../dir/colorScheme"
 
 
 const db = mongoose.connection;
-db.on("error", console.error.bind(console, "\x1b[31connection error:"));
+db.on("error", console.error.bind(console, paint.Red + "❌ mongoDB connection error event: "));
 const connection = { isConnected: 0 };
 
-const dbConnection = async (): Promise<void> => {
-    const { serverRuntimeConfig } = getConfig();
+const dbConnection = async (): Promise<boolean> => {
     if (!connection.isConnected) {
         try {
-            const response = await mongoose.connect(serverRuntimeConfig.db);
-            connection.isConnected = response.connections[0].readyState
-            console.log(connection.isConnected ? "\x1b[32mmongoDB connected" : "\x1b[31mmongoDB connection error")
-        } catch (e) { console.error(e) }
+            if (!process.env.db) return false;
+            connection.isConnected = (await mongoose.connect(process.env.db)).connections[0].readyState;
+            console.log(connection.isConnected ?
+                paint.Green + "✅ mongoDB connection success"
+                : paint.Red + "❌ mongoDB connection error")
+            return !!connection.isConnected;
+        } catch (e) { console.error(e); return false }
     }
+    return true;
 }
 
 export default dbConnection;
